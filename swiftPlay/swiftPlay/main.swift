@@ -81,3 +81,60 @@ extension Stack {
         items.isEmpty ? nil : items[items.count - 1]
     }
 }
+
+if let topItem = stackOfStrings.topItem {
+    print("The top item on the stack is \(topItem).")
+}
+
+// Type Constraints
+
+// Type Constraint Syntax
+
+class SomeClass {}
+protocol SomeProtocol {}
+
+func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
+    
+}
+
+// Type Constraints in Action
+
+func findIndex(ofString valueToFind: String, in array: [String]) -> Int? {
+    for (index, value) in array.enumerated() {
+        if value == valueToFind {
+            return index
+        }
+    }
+    
+    return nil
+}
+
+let strings = ["cat", "dog", "llama", "parakeet", "terrapin"]
+if let foundIndex = findIndex(ofString: "llama", in: strings) {
+    print("The index of llama is \(foundIndex)")
+}
+
+
+//func findIndex<T>(ofString valueToFind: T, in array: [T]) -> Int? {
+//    for (index, value) in array.enumerated() {
+//        if value == valueToFind {
+//            return index
+//        }
+//    }
+//
+//    return nil
+//}
+
+func findIndex<T: Equatable>(ofString valueToFind: T, in array: [T]) -> Int? {
+    for (index, value) in array.enumerated() {
+        if value == valueToFind {
+            return index
+        }
+    }
+    
+    return nil
+}
+
+let doubleIndex = findIndex(ofString: 9.3, in: [3.14159, 0.1, 0.25])
+let stringIndex = findIndex(ofString: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
+
