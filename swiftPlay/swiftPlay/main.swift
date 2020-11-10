@@ -1,3 +1,5 @@
+// The Problem that Opaque Types Solve
+
 protocol Shape {
     func draw() -> String
 }
@@ -17,3 +19,27 @@ struct Triangle: Shape {
 
 let smallTriangle = Triangle(size: 3)
 print(smallTriangle.draw())
+
+struct FlippedShape<T: Shape>: Shape {
+    var shape: T
+    
+    func draw() -> String {
+        let lines = shape.draw().split(separator: "\n")
+        return lines.reversed().joined(separator: "\n")
+    }
+}
+
+let flippedTriangle = FlippedShape(shape: smallTriangle)
+print(flippedTriangle.draw())
+
+struct JoinedShape<T: Shape, U: Shape>: Shape {
+    var top: T
+    var bottom: U
+    
+    func draw() -> String {
+        return top.draw() + "\n" + bottom.draw()
+    }
+}
+
+let joinedTriangle = JoinedShape(top: smallTriangle, bottom: flippedTriangle)
+print(joinedTriangle.draw())
