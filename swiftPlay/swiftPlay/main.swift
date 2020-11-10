@@ -106,3 +106,49 @@ struct FlippedShape1<T: Shape>: Shape {
 func `repeat`<T: Shape>(shape: T, count: Int) -> some Collection {
     Array<T>(repeating: shape, count: count)
 }
+
+// Difference Between Opaque Types and Protocol Types
+
+func protoFlip<T: Shape>(_ shape: T) -> Shape {
+    FlippedShape(shape: shape)
+}
+
+func protoFlip1<T: Shape>(_ shape: T) -> Shape {
+    if shape is Square {
+        return shape
+    }
+    
+    return FlippedShape(shape: shape)
+}
+
+let protoFlippedTriangle = protoFlip(smallTriangle)
+let sameThing = protoFlip(smallTriangle)
+/*
+protoFlippedTriangle == sameThing
+ */
+
+protocol Container {
+    associatedtype Item
+    var count: Int { get }
+    subscript(i: Int) -> Item { get }
+}
+
+extension Array: Container {}
+
+/*
+func makeProtocolContainer<T>(item: T) -> Container {
+    [item]
+}
+
+func makeProtocolContainer1<T, C: Container>(item: T) -> C {
+    [item]
+}
+ */
+
+func makeOpaqueContainer<T>(item: T) -> some Container {
+    [item]
+}
+
+let opaqueContainer = makeOpaqueContainer(item: 12)
+let twelve = opaqueContainer[0]
+print(type(of: twelve))
