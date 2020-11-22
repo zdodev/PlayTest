@@ -16,3 +16,13 @@ func isValidUrl(url: String) {
 //    print(url[a])
 }
 
+struct AStruct {
+    let a: Int
+}
+
+private struct PStruct {
+    let a: Int
+}
+
+let qq = AStruct(a: 4)
+fileprivate let ww = PStruct(a: 5)
