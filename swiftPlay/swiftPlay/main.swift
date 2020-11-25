@@ -1,28 +1,68 @@
-import Foundation
-
-let urlAddress = "https://www.naver.com"
-let urlAddress1 = "http://www.naver.com"
-let urlAddress2 = "https//www.naver.com"
-let urlAddress3 = "htps://www.naver.com"
-let urlAddress4 = "https://www.naver.com"
-
-func isValidUrl(url: String) {
-    guard let _ = url.range(of: #"^https?://"#, options: .regularExpression) else {
-        print("fail")
-        return
+class FruitA {
+    var stock: Int = 0
+    
+    func add(count: Int) {
+        stock += count
     }
-//    let a = url.range(of: #"^https?://"#, options: .regularExpression)
-//    print(a)
-//    print(url[a])
+    
+    func subtract(count: Int) {
+        stock -= count
+    }
 }
 
-struct AStruct {
-    let a: Int
+struct FruitB {
+    var stock: Int = 0
+    
+    mutating func add(count: Int) {
+        stock += count
+    }
+    
+    mutating func subtract(count: Int) {
+        stock -= count
+    }
 }
 
-private struct PStruct {
-    let a: Int
+struct ManagerA {
+    var fruits = [String: FruitA]()
+    
+    init() {
+        fruits = ["a": FruitA(), "b": FruitA()]
+    }
+    
+    func consumeFruit(name: String, amount: Int) {
+        guard let fruit = fruits[name] else {
+            return
+        }
+        
+        fruit.subtract(count: amount)
+    }
 }
 
-let qq = AStruct(a: 4)
-fileprivate let ww = PStruct(a: 5)
+struct ManagerB {
+//    var fruits = [String: FruitB]()
+    var fruits = [String: Int]()
+//    var fruitsArray = [FruitB]()
+    
+    init() {
+//        fruits = ["a": FruitB(), "b": FruitB()]
+        fruits = ["a": 0, "b": 0]
+    }
+    
+    func consumeFruit(name: String, amount: Int) {
+        guard var fruit = fruits[name] else {
+            return
+        }
+        
+//        fruit.subtract(count: amount)
+        fruit -= 3
+    }
+}
+
+let a = ManagerA()
+a.consumeFruit(name: "a", amount: 3)
+print(a.fruits["a"]!.stock)
+
+let b = ManagerB()
+b.consumeFruit(name: "a", amount: 3)
+//print(b.fruits["a"]!.stock)
+print(b.fruits["a"]!)
