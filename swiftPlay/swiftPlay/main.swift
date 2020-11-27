@@ -1,27 +1,47 @@
-struct Singleton {
-    static let singleton = Singleton()
-    var a = 199
+struct StructureSingleton {
+    static let singleton = StructureSingleton()
+    var number = 100
 }
 
-var a = Singleton.singleton
-var b = Singleton.singleton
+var firstStructureSingleton = StructureSingleton.singleton
+var secondStructureSingleton = StructureSingleton.singleton
 
-a.a = 100
-
-withUnsafePointer(to: &a) {
-    print($0)
+withUnsafePointer(to: &firstStructureSingleton) {
+    print("첫 번째 구조체 주소: \($0)")
 }
 
-withUnsafePointer(to: &b) {
-    print($0)
+withUnsafePointer(to: &secondStructureSingleton) {
+    print("두 번째 구조체 주소: \($0)")
 }
 
-withUnsafePointer(to: &a.a) {
-    print($0)
+withUnsafePointer(to: &firstStructureSingleton.number) {
+    print("첫 번째 구조체의 프로퍼티 주소: \($0)")
 }
 
-withUnsafePointer(to: &b.a) {
-    print($0)
+withUnsafePointer(to: &secondStructureSingleton.number) {
+    print("두 번째 구조체의 프로퍼티 주소: \($0)")
 }
 
-print(a.a, b.a)
+class ClassSingleton {
+    static let singleton = ClassSingleton()
+    var number = 100
+}
+
+var firstClassSingleton = ClassSingleton.singleton
+var secondClassSingleton = ClassSingleton.singleton
+
+withUnsafePointer(to: &firstClassSingleton) {
+    print("첫 번째 클래스 주소: \($0)")
+}
+
+withUnsafePointer(to: &secondClassSingleton) {
+    print("두 번째 클래스 주소: \($0)")
+}
+
+withUnsafePointer(to: &firstClassSingleton.number) {
+    print("첫 번째 클래스의 프로퍼티 주소: \($0)")
+}
+
+withUnsafePointer(to: &secondClassSingleton.number) {
+    print("두 번째 클래스의 프로퍼티 주소: \($0)")
+}
