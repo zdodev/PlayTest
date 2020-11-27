@@ -1,35 +1,27 @@
-protocol myDelegate {
-    func myDelegatePrintFunciton(number: Int)
+struct Singleton {
+    static let singleton = Singleton()
+    var a = 199
 }
 
-class MyDelegateClass {
-    var delegate: myDelegate?
-    
-    func execute(number: Int) {
-        print("execute 기능 실행")
-        delegate?.myDelegatePrintFunciton(number: number)
-    }
+var a = Singleton.singleton
+var b = Singleton.singleton
+
+a.a = 100
+
+withUnsafePointer(to: &a) {
+    print($0)
 }
 
-class MyController {
-    var myClass: MyDelegateClass!
-    
-    init() {
-        myClass = MyDelegateClass()
-        myClass.delegate = self
-    }
-    
-    func move(number: Int) {
-        print("move 기능 실행")
-        myClass.execute(number: number)
-    }
+withUnsafePointer(to: &b) {
+    print($0)
 }
 
-extension MyController: myDelegate {
-    func myDelegatePrintFunciton(number: Int) {
-        print("my number is \(number)")
-    }
+withUnsafePointer(to: &a.a) {
+    print($0)
 }
 
-let myController = MyController()
-myController.move(number: 5)
+withUnsafePointer(to: &b.a) {
+    print($0)
+}
+
+print(a.a, b.a)
