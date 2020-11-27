@@ -1,68 +1,35 @@
-class FruitA {
-    var stock: Int = 0
+protocol myDelegate {
+    func myDelegatePrintFunciton(number: Int)
+}
+
+class MyDelegateClass {
+    var delegate: myDelegate?
     
-    func add(count: Int) {
-        stock += count
-    }
-    
-    func subtract(count: Int) {
-        stock -= count
+    func execute(number: Int) {
+        print("execute 기능 실행")
+        delegate?.myDelegatePrintFunciton(number: number)
     }
 }
 
-struct FruitB {
-    var stock: Int = 0
-    
-    mutating func add(count: Int) {
-        stock += count
-    }
-    
-    mutating func subtract(count: Int) {
-        stock -= count
-    }
-}
-
-struct ManagerA {
-    var fruits = [String: FruitA]()
+class MyController {
+    var myClass: MyDelegateClass!
     
     init() {
-        fruits = ["a": FruitA(), "b": FruitA()]
+        myClass = MyDelegateClass()
+        myClass.delegate = self
     }
     
-    func consumeFruit(name: String, amount: Int) {
-        guard let fruit = fruits[name] else {
-            return
-        }
-        
-        fruit.subtract(count: amount)
+    func move(number: Int) {
+        print("move 기능 실행")
+        myClass.execute(number: number)
     }
 }
 
-struct ManagerB {
-//    var fruits = [String: FruitB]()
-    var fruits = [String: Int]()
-//    var fruitsArray = [FruitB]()
-    
-    init() {
-//        fruits = ["a": FruitB(), "b": FruitB()]
-        fruits = ["a": 0, "b": 0]
-    }
-    
-    func consumeFruit(name: String, amount: Int) {
-        guard var fruit = fruits[name] else {
-            return
-        }
-        
-//        fruit.subtract(count: amount)
-        fruit -= 3
+extension MyController: myDelegate {
+    func myDelegatePrintFunciton(number: Int) {
+        print("my number is \(number)")
     }
 }
 
-let a = ManagerA()
-a.consumeFruit(name: "a", amount: 3)
-print(a.fruits["a"]!.stock)
-
-let b = ManagerB()
-b.consumeFruit(name: "a", amount: 3)
-//print(b.fruits["a"]!.stock)
-print(b.fruits["a"]!)
+let myController = MyController()
+myController.move(number: 5)
