@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41876A77257262EC00417264 /* testc.c in Sources */ = {isa = PBXBuildFile; fileRef = 41876A76257262EC00417264 /* testc.c */; };
 		41A5FCAE25715A0B00446123 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5FCAD25715A0B00446123 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41876A74257262EC00417264 /* test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test-Bridging-Header.h"; sourceTree = "<group>"; };
+		41876A75257262EC00417264 /* testc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testc.h; sourceTree = "<group>"; };
+		41876A76257262EC00417264 /* testc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = testc.c; sourceTree = "<group>"; };
 		41A5FCAA25715A0B00446123 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A5FCAD25715A0B00446123 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				41A5FCAD25715A0B00446123 /* main.swift */,
+				41876A75257262EC00417264 /* testc.h */,
+				41876A76257262EC00417264 /* testc.c */,
+				41876A74257262EC00417264 /* test-Bridging-Header.h */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 				TargetAttributes = {
 					41A5FCA925715A0B00446123 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -120,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A5FCAE25715A0B00446123 /* main.swift in Sources */,
+				41876A77257262EC00417264 /* testc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +253,16 @@
 		41A5FCB225715A0B00446123 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "test/test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -253,8 +270,15 @@
 		41A5FCB325715A0B00446123 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "test/test-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
