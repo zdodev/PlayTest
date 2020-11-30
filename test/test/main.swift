@@ -16,3 +16,6 @@ func sapi(_ x: Int, arg: CVarArg...) -> Int {
 }
 
 print(sapi(4, arg: "nil"))
+
+//https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/using_imported_c_functions_in_swift
+//https://developer.apple.com/documentation/swift/cvararg
