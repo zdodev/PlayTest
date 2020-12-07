@@ -1,5 +1,17 @@
 import Foundation
 
+let username = "Arturo"
+if username == "Arturo" {
+    print("Hi, Arturo!")
+}
+
+let today = 8
+let favoriteNumbers = [4, 7, 8, 9]
+if favoriteNumbers.contains(today) {
+    print("It's a good day today!")
+}
+
+/// A position in an x-y coordinate system.
 struct Position: Equatable, Hashable {
     var x: Int
     var y: Int
