@@ -28,3 +28,7 @@ int whoPrecOp(char op1, char op2) {
     else
         return 0;
 }
+
+void convToRPNExp(char exp[]) {
+    
+}
