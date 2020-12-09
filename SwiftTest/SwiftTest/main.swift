@@ -84,26 +84,6 @@ struct Calculator {
     func bitwiseRightShiftOperation() {}
 }
 
-class Token {
-    let priority: Int = 0
-}
-
-class Operand: Token {
-    let operand: Int
-    
-    init(operand: Int) {
-        self.operand = operand
-    }
-}
-
-class Operator: Token {
-    let `operator`: Character
-    
-    init(operator: Character) {
-        self.operator = `operator`
-    }
-}
-
 //class Lexer {
 //    var tokens = Stack<Token>()
 //
@@ -136,13 +116,47 @@ class Operator: Token {
 //    }
 //}
 
-enum Precedence {
+class Token {
+    let priority: OperatorPrecedence
+    
+    init(priority: OperatorPrecedence) {
+        self.priority = priority
+    }
+}
+
+class Operand: Token {
+    let operand: Int
+    
+    init(operand: Int) {
+        self.operand = operand
+        super.init(priority: .low)
+    }
+}
+
+class Operator: Token {
+    let `operator`: Character
+    
+    init(operator: Character, priority: OperatorPrecedence) {
+        self.operator = `operator`
+        super.init(priority: priority)
+    }
+}
+
+enum OperatorPrecedence {
     case high
+    case middle
     case low
 }
 
-func getOperatorPrecedence(operator: Character) {
-    
+func getOperatorPrecedence(operator: Character) -> OperatorPrecedence {
+    switch `operator` {
+    case "*", "/":
+        return .high
+    case "+", "0":
+        return .middle
+    default:
+        return .low
+    }
 }
 
 func convertInfixToPostfix(expression: String) {
