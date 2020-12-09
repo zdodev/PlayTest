@@ -1,5 +1,5 @@
 struct Stack<T> {
-    private var elements = [T]()
+    var elements = [T]()
     
     mutating func push(element: T) {
         elements.append(element)
@@ -116,9 +116,13 @@ class Lexer {
             var number: Int = 0
             
             while isNumber(character: str[String.Index(utf16Offset: index, in: str)]) {
-                number = number * 10 + str[String.Index(utf16Offset: index, in: str)].hexDigitValue!
+                guard let digit = str[String.Index(utf16Offset: index, in: str)].hexDigitValue else {
+                    return
+                }
+                number = number * 10 + digit
                 index += 1
             }
+            tokens.push(element: Operand(operand: number))
         }
     }
     
@@ -134,6 +138,7 @@ class Lexer {
 //    func convertStringToNumber(
 }
 
-let str = "abcde"
+let str = "10+24-30"
 
+let index = 0
 let lexer = Lexer()
