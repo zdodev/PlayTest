@@ -1,14 +1,18 @@
-//
-//  main.c
-//  CTest
-//
-//  Created by zdo on 2020/12/09.
-//
-
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+int main(int argc, const char *argv[]) {
+    
+}
+
+int getOpPrec(char op) {
+    switch (op) {
+        case '*':
+        case '/':
+            return 5;
+        case '+':
+        case '-':
+            return 3;
+    }
+    
+    return -1;
 }
