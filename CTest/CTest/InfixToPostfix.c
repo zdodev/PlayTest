@@ -29,6 +29,7 @@ int whoPrecOp(char op1, char op2) {
 }
 
 void convToRPNExp(char exp[]) {
+    // exp는 수식
     Stack stack;
     int expLen = strlen(exp);
     char *convExp = (char *)malloc(expLen + 1);
@@ -50,8 +51,10 @@ void convToRPNExp(char exp[]) {
                 case '-':
                 case '*':
                 case '/':
+                    // 스택이 비어있지 않고 스택에 저장된 연산자 우선순위가 같거나 높으면 꺼내어 저장
                     while (!SIsEmpty(&stack) && whoPrecOp(SPeek(&stack), tok) >= 0)
                         convExp[idx++] = SPop(&stack);
+                    // 아니면 연산자 스택에 저장
                     SPush(&stack, tok);
                     break;
                     
