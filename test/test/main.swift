@@ -1,15 +1,15 @@
-struct Stack<Number: Numeric> {
-    private var elements = [Number]()
+struct Stack<T> {
+    private var elements = [T]()
     
-    mutating func push(element: Number) {
+    mutating func push(element: T) {
         elements.append(element)
     }
     
-    mutating func pop() -> Number? {
+    mutating func pop() -> T? {
         elements.popLast()
     }
     
-    func peek() -> Number? {
+    func peek() -> T? {
         elements.last
     }
     
@@ -58,7 +58,7 @@ struct DecimalCalculator: DecimalCalculable {
 
 struct Calculator {
     var decimalCalculator = DecimalCalculator()
-//    var stack = Stack()
+    var tokens = Stack<Token>()
     
     init() {}
     
@@ -84,12 +84,56 @@ struct Calculator {
     func bitwiseRightShiftOperation() {}
 }
 
-var c = Calculator()
-let lhs = "25"
-let op = "*"
-let rhs = "48"
+class Token {
+    let priority: Int = 0
+}
 
-let str = lhs + op + rhs
-print(str)
+class Operand: Token {
+    let operand: Int
+    
+    init(operand: Int) {
+        self.operand = operand
+    }
+}
 
-let a = str.endIndex
+class Operator: Token {
+    let `operator`: Character
+    
+    init(operator: Character) {
+        self.operator = `operator`
+    }
+}
+
+class Lexer {
+    var tokens = Stack<Token>()
+    
+    func makeToken(expression: String) {
+        var index = 0
+        if isOperator(character: str[String.Index(utf16Offset: index, in: str)]) {
+            tokens.push(element: Operator(operator: str[String.Index(utf16Offset: index, in: str)]))
+            index += 1
+        } else if isNumber(character: str[String.Index(utf16Offset: index, in: str)]) {
+            var number: Int = 0
+            
+            while isNumber(character: str[String.Index(utf16Offset: index, in: str)]) {
+                number = number * 10 + str[String.Index(utf16Offset: index, in: str)].hexDigitValue!
+                index += 1
+            }
+        }
+    }
+    
+    func isNumber(character: Character) -> Bool {
+        character.isNumber
+    }
+    
+    func isOperator(character: Character) -> Bool {
+        let delimiters: [Character] = ["+", "-", "*", "/"]
+        return delimiters.contains(character)
+    }
+    
+//    func convertStringToNumber(
+}
+
+let str = "abcde"
+
+let lexer = Lexer()
