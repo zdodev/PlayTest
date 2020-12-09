@@ -1,6 +1,6 @@
 #ifndef InfixToPostfix_h
 #define InfixToPostfix_h
 
-#include <stdio.h>
+void ConvToRPNExp(char exp[]);
 
 #endif /* InfixToPostfix_h */
