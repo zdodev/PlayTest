@@ -136,7 +136,7 @@ class Operand: Token {
 class Operator: Token {
     let `operator`: Character
     
-    init(operator: Character, priority: OperatorPrecedence) {
+    init(`operator`: Character, priority: OperatorPrecedence) {
         self.operator = `operator`
         super.init(priority: priority)
     }
@@ -148,7 +148,7 @@ enum OperatorPrecedence {
     case low
 }
 
-func getOperatorPrecedence(operator: Character) -> OperatorPrecedence {
+func getOperatorPrecedence(`operator`: Character) -> OperatorPrecedence {
     switch `operator` {
     case "*", "/":
         return .high
@@ -159,6 +159,32 @@ func getOperatorPrecedence(operator: Character) -> OperatorPrecedence {
     }
 }
 
-func convertInfixToPostfix(expression: String) {
+var tokens = [Token]()
+
+func convertExpressionToToken(expression: String) {
+    var number = 0
+    let operators: [Character] = ["+", "-", "*", "/"]
     
+    /*
+     인덱스 기반으로 해야할 듯 싶다. 마지막 오퍼랜드가 담아지질 않는다...
+    for character in expression {
+        if character.isHexDigit {
+            guard let digitValue = character.hexDigitValue else {
+                return
+            }
+            number = number * 10 + digitValue
+        } else if operators.contains(character) {
+            let operand = Operand(operand: number)
+            tokens.append(operand)
+            number = 0
+            
+            let `operator` = Operator(operator: character, priority: getOperatorPrecedence(operator: character))
+            tokens.append(`operator`)
+        }
+    }
+ */
 }
+
+let str = "11+2*3"
+convertExpressionToToken(expression: str)
+print(tokens)
