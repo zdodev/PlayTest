@@ -165,8 +165,6 @@ func convertExpressionToToken(expression: String) {
     var number = 0
     let operators: [Character] = ["+", "-", "*", "/"]
     
-    /*
-     인덱스 기반으로 해야할 듯 싶다. 마지막 오퍼랜드가 담아지질 않는다...
     for character in expression {
         if character.isHexDigit {
             guard let digitValue = character.hexDigitValue else {
@@ -180,11 +178,23 @@ func convertExpressionToToken(expression: String) {
             
             let `operator` = Operator(operator: character, priority: getOperatorPrecedence(operator: character))
             tokens.append(`operator`)
+        } else if character == "=" {
+            let operand = Operand(operand: number)
+            tokens.append(operand)
         }
     }
- */
 }
 
-let str = "11+2*3"
+let str = "11+2*3="
 convertExpressionToToken(expression: str)
-print(tokens)
+
+/*
+for ch in tokens {
+    if let operand = ch as? Operand {
+        print(operand.operand)
+    } else if let `operator` = ch as? Operator {
+        print(`operator`.operator)
+    }
+}
+ */
+
