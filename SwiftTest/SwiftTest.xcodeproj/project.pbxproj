@@ -14,6 +14,7 @@
 		41DA73B825828C1500C15197 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B725828C1500C15197 /* Operator.swift */; };
 		41DA73BB25828C6100C15197 /* OperatorPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */; };
 		41DA73BE25828CA100C15197 /* ExpressionLexicalAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BD25828CA100C15197 /* ExpressionLexicalAnalyzer.swift */; };
+		41DA73C125828CC700C15197 /* ExpressionSyntaxAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73C025828CC700C15197 /* ExpressionSyntaxAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		41DA73B725828C1500C15197 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorPrecedence.swift; sourceTree = "<group>"; };
 		41DA73BD25828CA100C15197 /* ExpressionLexicalAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionLexicalAnalyzer.swift; sourceTree = "<group>"; };
+		41DA73C025828CC700C15197 /* ExpressionSyntaxAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionSyntaxAnalyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				41DA73B725828C1500C15197 /* Operator.swift */,
 				41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */,
 				41DA73BD25828CA100C15197 /* ExpressionLexicalAnalyzer.swift */,
+				41DA73C025828CC700C15197 /* ExpressionSyntaxAnalyzer.swift */,
 			);
 			path = Analyzer;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				41DA73BB25828C6100C15197 /* OperatorPrecedence.swift in Sources */,
 				41DA73BE25828CA100C15197 /* ExpressionLexicalAnalyzer.swift in Sources */,
 				41DA73AE25828B5A00C15197 /* Stack.swift in Sources */,
+				41DA73C125828CC700C15197 /* ExpressionSyntaxAnalyzer.swift in Sources */,
 				418BACD925810FE3002BD441 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
