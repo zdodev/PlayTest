@@ -57,51 +57,48 @@
 //    func bitwiseRightShiftOperation() {}
 //}
 
-func calculate(expression: [Token]) -> Int {
-    var operands = Stack<Operand>()
-    var calculateResult: Int = 0
-    
-    for token in expression {
-        if let operand = token as? Operand {
-            operands.push(element: operand)
-        } else if let `operator` = token as? Operator {
-            switch `operator`.operator {
-            case "+":
+struct Calculator {
+    func calculate(expression: [Token]) -> Int {
+        var operands = Stack<Operand>()
+        var calculateResult: Int = 0
+        
+        for token in expression {
+            if let operand = token as? Operand {
+                operands.push(element: operand)
+            } else if let `operator` = token as? Operator {
+                var intermediateResult: Operand?
                 guard let secondOperand = operands.pop()?.operand else { return 0 }
                 guard let firstOperand = operands.pop()?.operand else { return 0 }
-                let result = Operand(operand: firstOperand + secondOperand)
+                
+                switch `operator`.operator {
+                case "+":
+                    intermediateResult = Operand(operand: firstOperand + secondOperand)
+                case "-":
+                    intermediateResult = Operand(operand: firstOperand - secondOperand)
+                case "*":
+                    intermediateResult = Operand(operand: firstOperand * secondOperand)
+                case "/":
+                    intermediateResult = Operand(operand: firstOperand / secondOperand)
+                default:
+                    print("error") // error
+                }
+                
+                guard let result = intermediateResult else { return 0 }
                 operands.push(element: result)
-            case "-":
-                guard let secondOperand = operands.pop()?.operand else { return 0 }
-                guard let firstOperand = operands.pop()?.operand else { return 0 }
-                let result = Operand(operand: firstOperand - secondOperand)
-                operands.push(element: result)
-            case "*":
-                guard let secondOperand = operands.pop()?.operand else { return 0 }
-                guard let firstOperand = operands.pop()?.operand else { return 0 }
-                let result = Operand(operand: firstOperand * secondOperand)
-                operands.push(element: result)
-            case "/":
-                guard let secondOperand = operands.pop()?.operand else { return 0 }
-                guard let firstOperand = operands.pop()?.operand else { return 0 }
-                let result = Operand(operand: firstOperand / secondOperand)
-                operands.push(element: result)
-            default:
-                print("error") // error
             }
         }
+        
+        if let result = operands.pop() {
+            calculateResult = result.operand
+        }
+        
+        return calculateResult
     }
-    
-    if let result = operands.pop() {
-        calculateResult = result.operand
-    }
-    
-    return calculateResult
 }
 
 let ex = ExpressionLexicalAnalyzer()
 let a = ex.convertExpressionToToken(expression: "5+4*3-1=")
 let ex2 = ExpressionSyntaxAnalyzer()
 let b = ex2.convertInfixToPostfix(tokenization: a!)
-
-print(calculate(expression: b))
+let c = Calculator()
+print(c.calculate(expression: b))
