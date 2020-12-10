@@ -57,32 +57,6 @@
 //    func bitwiseRightShiftOperation() {}
 //}
 
-
-
-class Operand: Token {
-    let operand: Int
-    
-    init(operand: Int) {
-        self.operand = operand
-        super.init(priority: .low)
-    }
-}
-
-class Operator: Token {
-    let `operator`: Character
-    
-    init(`operator`: Character, priority: OperatorPrecedence) {
-        self.operator = `operator`
-        super.init(priority: priority)
-    }
-}
-
-enum OperatorPrecedence: Comparable {
-    case low
-    case middle
-    case high
-}
-
 struct ExpressionLexicalAnalyzer {
     func getOperatorPrecedence(`operator`: Character) -> OperatorPrecedence {
         switch `operator` {
