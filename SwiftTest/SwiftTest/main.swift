@@ -142,11 +142,15 @@ class Operator: Token {
     }
 }
 
-enum OperatorPrecedence {
+enum OperatorPrecedence: Int {
     case high
     case middle
     case low
 }
+
+func <>
+
+print(OperatorPrecedence.high < OperatorPrecedence.low)
 
 func getOperatorPrecedence(`operator`: Character) -> OperatorPrecedence {
     switch `operator` {
@@ -159,7 +163,7 @@ func getOperatorPrecedence(`operator`: Character) -> OperatorPrecedence {
     }
 }
 
-var tokens = [Token]()
+var infixTokens = [Token]()
 
 func convertExpressionToToken(expression: String) {
     var number = 0
@@ -173,20 +177,35 @@ func convertExpressionToToken(expression: String) {
             number = number * 10 + digitValue
         } else if operators.contains(character) {
             let operand = Operand(operand: number)
-            tokens.append(operand)
+            infixTokens.append(operand)
             number = 0
             
             let `operator` = Operator(operator: character, priority: getOperatorPrecedence(operator: character))
-            tokens.append(`operator`)
+            infixTokens.append(`operator`)
         } else if character == "=" {
             let operand = Operand(operand: number)
-            tokens.append(operand)
+            infixTokens.append(operand)
         }
     }
 }
 
 let str = "11+2*3="
 convertExpressionToToken(expression: str)
+
+func convertInfixToPostfix(tokens: [Token]) {
+    var postfixExpression = [Token]()
+    var operators = Stack<Operator>()
+    
+    for token in tokens {
+        if let operand = token as? Operand {
+            postfixExpression.append(operand)
+        } else if let `operator` = token as? Operator {
+//            if !operators.isEmpty &&  {
+//
+//            }
+        }
+    }
+}
 
 /*
 for ch in tokens {
