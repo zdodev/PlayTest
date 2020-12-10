@@ -1,27 +1,3 @@
-struct Stack<T> {
-    var elements = [T]()
-    
-    mutating func push(element: T) {
-        elements.append(element)
-    }
-    
-    mutating func pop() -> T? {
-        elements.popLast()
-    }
-    
-    func peek() -> T? {
-        elements.last
-    }
-    
-    var isEmpty: Bool {
-        elements.isEmpty
-    }
-    
-    var count: Int {
-        elements.count
-    }
-}
-
 //protocol Calculable {
 //    func add(_ lhs: Int, _ rhs: Int) -> Int
 //}
@@ -193,11 +169,6 @@ struct ExpressionSyntaxAnalyzer {
     }
 }
 
-let ex = ExpressionLexicalAnalyzer()
-let a = ex.convertExpressionToToken(expression: "5+4*3-1=")
-let ex2 = ExpressionSyntaxAnalyzer()
-let b = ex2.convertInfixToPostfix(tokenization: a!)
-
 func calculate(expression: [Token]) -> Int {
     var operands = Stack<Operand>()
     var calculateResult: Int = 0
@@ -239,5 +210,10 @@ func calculate(expression: [Token]) -> Int {
     
     return calculateResult
 }
+
+let ex = ExpressionLexicalAnalyzer()
+let a = ex.convertExpressionToToken(expression: "5+4*3-1=")
+let ex2 = ExpressionSyntaxAnalyzer()
+let b = ex2.convertInfixToPostfix(tokenization: a!)
 
 print(calculate(expression: b))
