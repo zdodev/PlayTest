@@ -27,7 +27,6 @@ protocol Calculable {
 //    func subtract(_ lhs: Int, _ rhs: Int) -> Int
 //    func multiply(_ lhs: Int, _ rhs: Int) -> Int
 }
-// double 형의 정확한 int화?
 
 protocol DecimalCalculable: Calculable {
     func add(_ lhs: Int, _ rhs: Double) -> Double
@@ -84,39 +83,15 @@ struct Calculator {
     func bitwiseRightShiftOperation() {}
 }
 
-//class Lexer {
-//    var tokens = Stack<Token>()
-//
-//    func makeToken(expression: String) {
-//        var index = 0
-//        if isOperator(character: str[String.Index(utf16Offset: index, in: str)]) {
-//            tokens.push(element: Operator(operator: str[String.Index(utf16Offset: index, in: str)]))
-//            index += 1
-//        } else if isNumber(character: str[String.Index(utf16Offset: index, in: str)]) {
-//            var number: Int = 0
-//
-//            while isNumber(character: str[String.Index(utf16Offset: index, in: str)]) {
-//                guard let digit = str[String.Index(utf16Offset: index, in: str)].hexDigitValue else {
-//                    return
-//                }
-//                number = number * 10 + digit
-//                index += 1
-//            }
-//            tokens.push(element: Operand(operand: number))
-//        }
-//    }
-//
-//    func isNumber(character: Character) -> Bool {
-//        character.isNumber
-//    }
-//
-//    func isOperator(character: Character) -> Bool {
-//        let delimiters: [Character] = ["+", "-", "*", "/"]
-//        return delimiters.contains(character)
-//    }
-//}
-
-class Token {
+class Token: Comparable {
+    static func < (lhs: Token, rhs: Token) -> Bool {
+        lhs.priority < rhs.priority
+    }
+    
+    static func == (lhs: Token, rhs: Token) -> Bool {
+        lhs.priority == rhs.priority
+    }
+    
     let priority: OperatorPrecedence
     
     init(priority: OperatorPrecedence) {
@@ -142,21 +117,17 @@ class Operator: Token {
     }
 }
 
-enum OperatorPrecedence: Int {
-    case high
-    case middle
+enum OperatorPrecedence: Comparable {
     case low
+    case middle
+    case high
 }
-
-func <>
-
-print(OperatorPrecedence.high < OperatorPrecedence.low)
 
 func getOperatorPrecedence(`operator`: Character) -> OperatorPrecedence {
     switch `operator` {
     case "*", "/":
         return .high
-    case "+", "0":
+    case "+", "-":
         return .middle
     default:
         return .low
@@ -189,10 +160,7 @@ func convertExpressionToToken(expression: String) {
     }
 }
 
-let str = "11+2*3="
-convertExpressionToToken(expression: str)
-
-func convertInfixToPostfix(tokens: [Token]) {
+func convertInfixToPostfix(tokens: [Token]) -> [Token] {
     var postfixExpression = [Token]()
     var operators = Stack<Operator>()
     
@@ -200,20 +168,39 @@ func convertInfixToPostfix(tokens: [Token]) {
         if let operand = token as? Operand {
             postfixExpression.append(operand)
         } else if let `operator` = token as? Operator {
-//            if !operators.isEmpty &&  {
-//
-//            }
+            if operators.isEmpty {
+                operators.push(element: `operator`)
+            } else {
+                while let previousStoredOperator = operators.peek(), previousStoredOperator >= `operator` {
+                    print("왜")
+                    postfixExpression.append(previousStoredOperator)
+                    _ = operators.pop()
+                }
+                operators.push(element: `operator`)
+            }
         }
     }
+    while !operators.isEmpty {
+        if let previousStoredOperator = operators.pop() {
+            postfixExpression.append(previousStoredOperator)
+        }
+    }
+    
+    return postfixExpression
 }
 
-/*
-for ch in tokens {
+let str = "1+2*3+4-5="
+convertExpressionToToken(expression: str)
+let a = convertInfixToPostfix(tokens: infixTokens)
+printToken(a: a)
+
+func printToken(a: [Token]) {
+for ch in a {
     if let operand = ch as? Operand {
         print(operand.operand)
     } else if let `operator` = ch as? Operator {
         print(`operator`.operator)
     }
 }
- */
+}
 
