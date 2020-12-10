@@ -57,9 +57,17 @@
 		418BACD725810FE3002BD441 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				41DA73A92582758600C15197 /* Analyzer */,
 				418BACD825810FE3002BD441 /* main.swift */,
 			);
 			path = SwiftTest;
+			sourceTree = "<group>";
+		};
+		41DA73A92582758600C15197 /* Analyzer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Analyzer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
