@@ -97,7 +97,7 @@ struct Calculator {
 }
 
 let ex = ExpressionLexicalAnalyzer()
-let a = ex.convertExpressionToToken(expression: "5+4*3-1=")
+let a = ex.convertExpressionToToken(expression: "5+4*3*2=")
 let ex2 = ExpressionSyntaxAnalyzer()
 let b = ex2.convertInfixToPostfix(tokenization: a!)
 let c = Calculator()
