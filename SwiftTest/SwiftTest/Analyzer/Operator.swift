@@ -1,8 +1,19 @@
 class Operator: Token {
-    let `operator`: Character
+    let value: Character
     
-    init(`operator`: Character, priority: OperatorPrecedence) {
-        self.operator = `operator`
+    init(value: Character, priority: OperatorPrecedence) {
+        self.value = value
         super.init(priority: priority)
+    }
+    
+    static func getOperatorPrecedence(`operator`: Character) -> OperatorPrecedence {
+        switch `operator` {
+        case "*", "/":
+            return .high
+        case "+", "-":
+            return .middle
+        default:
+            return .low
+        }
     }
 }

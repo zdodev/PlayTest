@@ -1,5 +1,5 @@
 class Token {
-    let priority: OperatorPrecedence
+    private let priority: OperatorPrecedence
     
     init(priority: OperatorPrecedence) {
         self.priority = priority

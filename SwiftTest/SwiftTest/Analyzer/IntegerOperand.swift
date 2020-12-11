@@ -1,8 +1,8 @@
 class IntegerOperand: Token {
     let value: Int
     
-    init(operand: Int) {
-        self.value = operand
+    init(value: Int) {
+        self.value = value
         super.init(priority: .low)
     }
 }

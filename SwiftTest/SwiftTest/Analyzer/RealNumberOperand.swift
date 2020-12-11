@@ -1,8 +1,8 @@
 class RealNumberOperand: Token {
-    let operand: Int
+    let value: Double
     
-    init(operand: Int) {
-        self.operand = operand
+    init(value: Double) {
+        self.value = value
         super.init(priority: .low)
     }
 }
