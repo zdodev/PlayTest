@@ -67,8 +67,8 @@ struct Calculator {
                 operands.push(element: operand)
             } else if let `operator` = token as? Operator {
                 var intermediateResult: IntegerOperand?
-                guard let secondOperand = operands.pop()?.operand else { return 0 }
-                guard let firstOperand = operands.pop()?.operand else { return 0 }
+                guard let secondOperand = operands.pop()?.value else { return 0 }
+                guard let firstOperand = operands.pop()?.value else { return 0 }
                 
                 switch `operator`.operator {
                 case "+":
@@ -89,7 +89,7 @@ struct Calculator {
         }
         
         if let result = operands.pop() {
-            calculateResult = result.operand
+            calculateResult = result.value
         }
         
         return calculateResult

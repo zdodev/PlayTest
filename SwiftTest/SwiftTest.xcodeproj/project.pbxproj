@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		415F1903258349B70041CD37 /* RealNumberOperand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F1902258349B70041CD37 /* RealNumberOperand.swift */; };
 		418BACD925810FE3002BD441 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BACD825810FE3002BD441 /* main.swift */; };
 		41DA73AE25828B5A00C15197 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73AD25828B5A00C15197 /* Stack.swift */; };
 		41DA73B225828BC200C15197 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B125828BC200C15197 /* Token.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		415F1902258349B70041CD37 /* RealNumberOperand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealNumberOperand.swift; sourceTree = "<group>"; };
 		418BACD525810FE3002BD441 /* SwiftTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		418BACD825810FE3002BD441 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		41DA73AD25828B5A00C15197 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				41DA73B125828BC200C15197 /* Token.swift */,
 				41DA73B425828C0000C15197 /* IntegerOperand.swift */,
+				415F1902258349B70041CD37 /* RealNumberOperand.swift */,
 				41DA73B725828C1500C15197 /* Operator.swift */,
 				41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */,
 				41DA73BD25828CA100C15197 /* ExpressionLexicalAnalyzer.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				415F1903258349B70041CD37 /* RealNumberOperand.swift in Sources */,
 				41DA73B225828BC200C15197 /* Token.swift in Sources */,
 				41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */,
 				41DA73B825828C1500C15197 /* Operator.swift in Sources */,
