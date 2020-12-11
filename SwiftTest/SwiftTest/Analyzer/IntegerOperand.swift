@@ -1,4 +1,4 @@
-class Operand: Token {
+class IntegerOperand: Token {
     let operand: Int
     
     init(operand: Int) {

@@ -10,7 +10,7 @@
 		418BACD925810FE3002BD441 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BACD825810FE3002BD441 /* main.swift */; };
 		41DA73AE25828B5A00C15197 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73AD25828B5A00C15197 /* Stack.swift */; };
 		41DA73B225828BC200C15197 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B125828BC200C15197 /* Token.swift */; };
-		41DA73B525828C0000C15197 /* Operand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B425828C0000C15197 /* Operand.swift */; };
+		41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B425828C0000C15197 /* IntegerOperand.swift */; };
 		41DA73B825828C1500C15197 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B725828C1500C15197 /* Operator.swift */; };
 		41DA73BB25828C6100C15197 /* OperatorPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */; };
 		41DA73BE25828CA100C15197 /* ExpressionLexicalAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BD25828CA100C15197 /* ExpressionLexicalAnalyzer.swift */; };
@@ -34,7 +34,7 @@
 		418BACD825810FE3002BD441 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		41DA73AD25828B5A00C15197 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		41DA73B125828BC200C15197 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		41DA73B425828C0000C15197 /* Operand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operand.swift; sourceTree = "<group>"; };
+		41DA73B425828C0000C15197 /* IntegerOperand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerOperand.swift; sourceTree = "<group>"; };
 		41DA73B725828C1500C15197 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorPrecedence.swift; sourceTree = "<group>"; };
 		41DA73BD25828CA100C15197 /* ExpressionLexicalAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionLexicalAnalyzer.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				41DA73B125828BC200C15197 /* Token.swift */,
-				41DA73B425828C0000C15197 /* Operand.swift */,
+				41DA73B425828C0000C15197 /* IntegerOperand.swift */,
 				41DA73B725828C1500C15197 /* Operator.swift */,
 				41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */,
 				41DA73BD25828CA100C15197 /* ExpressionLexicalAnalyzer.swift */,
@@ -157,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41DA73B225828BC200C15197 /* Token.swift in Sources */,
-				41DA73B525828C0000C15197 /* Operand.swift in Sources */,
+				41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */,
 				41DA73B825828C1500C15197 /* Operator.swift in Sources */,
 				41DA73BB25828C6100C15197 /* OperatorPrecedence.swift in Sources */,
 				41DA73BE25828CA100C15197 /* ExpressionLexicalAnalyzer.swift in Sources */,

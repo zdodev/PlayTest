@@ -23,14 +23,14 @@ struct ExpressionLexicalAnalyzer {
                 }
                 digitNumber = digitNumber * 10 + digitValue
             } else if operatorsTokens.contains(character) {
-                let operandToken = Operand(operand: digitNumber)
+                let operandToken = IntegerOperand(operand: digitNumber)
                 tokenization.append(operandToken)
                 digitNumber = 0
                 
                 let operatorToken = Operator(operator: character, priority: getOperatorPrecedence(operator: character))
                 tokenization.append(operatorToken)
             } else if character == equalSignToken {
-                let operandToken = Operand(operand: digitNumber)
+                let operandToken = IntegerOperand(operand: digitNumber)
                 tokenization.append(operandToken)
             }
         }

@@ -4,7 +4,7 @@ struct ExpressionSyntaxAnalyzer {
         var operators = Stack<Operator>()
         
         for token in tokenization {
-            if let operand = token as? Operand {
+            if let operand = token as? IntegerOperand {
                 postfixExpression.append(operand)
             } else if let `operator` = token as? Operator {
                 if operators.isEmpty {

@@ -59,26 +59,26 @@
 
 struct Calculator {
     func calculate(expression: [Token]) -> Int {
-        var operands = Stack<Operand>()
+        var operands = Stack<IntegerOperand>()
         var calculateResult: Int = 0
         
         for token in expression {
-            if let operand = token as? Operand {
+            if let operand = token as? IntegerOperand {
                 operands.push(element: operand)
             } else if let `operator` = token as? Operator {
-                var intermediateResult: Operand?
+                var intermediateResult: IntegerOperand?
                 guard let secondOperand = operands.pop()?.operand else { return 0 }
                 guard let firstOperand = operands.pop()?.operand else { return 0 }
                 
                 switch `operator`.operator {
                 case "+":
-                    intermediateResult = Operand(operand: firstOperand + secondOperand)
+                    intermediateResult = IntegerOperand(operand: firstOperand + secondOperand)
                 case "-":
-                    intermediateResult = Operand(operand: firstOperand - secondOperand)
+                    intermediateResult = IntegerOperand(operand: firstOperand - secondOperand)
                 case "*":
-                    intermediateResult = Operand(operand: firstOperand * secondOperand)
+                    intermediateResult = IntegerOperand(operand: firstOperand * secondOperand)
                 case "/":
-                    intermediateResult = Operand(operand: firstOperand / secondOperand)
+                    intermediateResult = IntegerOperand(operand: firstOperand / secondOperand)
                 default:
                     print("error") // error
                 }
