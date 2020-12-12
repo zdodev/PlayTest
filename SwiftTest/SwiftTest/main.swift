@@ -80,11 +80,11 @@ let expressions = [
 //}
 
 let a = ExpressionAnalyzer()
-let b = a.convertToToken(expression: expressions[0])
+let b = TokenAnalyzer()
+let q = a.convertExpressionToToken(expression: expressions[2])
+let w = b.convertInfixToPostfix(tokenExpression: q!)
 
-print(b)
-
-if let c = b {
+if let c = w {
     for d in c {
         if let e = d as? IntegerOperand {
             print(e.value)
