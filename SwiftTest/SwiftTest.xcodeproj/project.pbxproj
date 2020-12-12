@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411BC1E725851605008DCEC1 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BC1E625851605008DCEC1 /* Calculation.swift */; };
 		415F1903258349B70041CD37 /* RealNumberOperand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F1902258349B70041CD37 /* RealNumberOperand.swift */; };
 		415F1906258350650041CD37 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F1905258350650041CD37 /* Calculator.swift */; };
 		418BACD925810FE3002BD441 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BACD825810FE3002BD441 /* main.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		411BC1E625851605008DCEC1 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		415F1902258349B70041CD37 /* RealNumberOperand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealNumberOperand.swift; sourceTree = "<group>"; };
 		415F1905258350650041CD37 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		418BACD525810FE3002BD441 /* SwiftTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 				41DA73B725828C1500C15197 /* Operator.swift */,
 				41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */,
 				41DA73C025828CC700C15197 /* TokenAnalyzer.swift */,
+				411BC1E625851605008DCEC1 /* Calculation.swift */,
 				415F1905258350650041CD37 /* Calculator.swift */,
 			);
 			path = Analyzer;
@@ -164,6 +167,7 @@
 			files = (
 				415F1903258349B70041CD37 /* RealNumberOperand.swift in Sources */,
 				41DA73B225828BC200C15197 /* Token.swift in Sources */,
+				411BC1E725851605008DCEC1 /* Calculation.swift in Sources */,
 				41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */,
 				415F1906258350650041CD37 /* Calculator.swift in Sources */,
 				41DA73B825828C1500C15197 /* Operator.swift in Sources */,
