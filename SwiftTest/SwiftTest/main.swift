@@ -86,6 +86,7 @@ let w = b.convertInfixToPostfix(tokenExpression: q!)
 
 if let c = w {
     for d in c {
+        print(d)
         if let e = d as? IntegerOperand {
             print(e.value)
         } else if let f = d as? RealNumberOperand {
@@ -95,3 +96,8 @@ if let c = w {
         }
     }
 }
+
+var aa = Token(priority: .low)
+var bb: Token = IntegerOperand(value: 3)
+
+print(bb is IntegerOperand)
