@@ -6,6 +6,8 @@ struct ExpressionSyntaxAnalyzer {
         for token in tokenization {
             if let operand = token as? IntegerOperand {
                 postfixExpression.append(operand)
+            } else if let operand = token as? RealNumberOperand {
+                postfixExpression.append(operand)
             } else if let `operator` = token as? Operator {
                 if operators.isEmpty {
                     operators.push(element: `operator`)

@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationController
-        self.storyboard.in
+        let a = Double("1234.1234")
+        print(a!)
     }
 
 

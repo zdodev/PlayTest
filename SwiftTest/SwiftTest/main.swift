@@ -57,9 +57,18 @@
 //    func bitwiseRightShiftOperation() {}
 //}
 
-let ex = ExpressionLexicalAnalyzer()
-let a = ex.convertExpressionToToken(expression: "5+4*3*2=")
-let ex2 = ExpressionSyntaxAnalyzer()
-let b = ex2.convertInfixToPostfix(tokenization: a!)
-let c = Calculator()
-print(c.calculate(expression: b))
+//let ex = ExpressionLexicalAnalyzer()
+//let a = ex.convertExpressionToToken(expression: "5.1+4*3*2=")
+//let ex2 = ExpressionSyntaxAnalyzer()
+//let b = ex2.convertInfixToPostfix(tokenization: a!)
+//let c = Calculator()
+//print(c.calculate(expression: b))
+
+let expressions = [
+    "20+4-3",
+    "1+2*3-4",
+    "1.2+3*5"
+]
+
+let a = 3
+let b = 3.5

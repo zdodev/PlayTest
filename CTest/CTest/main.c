@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include "InfixToPostfix.h"
 
 int main(int argc, const char *argv[]) {

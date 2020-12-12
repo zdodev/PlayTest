@@ -11,10 +11,6 @@ struct ExpressionLexicalAnalyzer {
         for character in expression {
             if character.isHexDigit || character == pointSignToken {
                 stringNumber.append(character)
-//                guard let digitValue = character.hexDigitValue else {
-//                    return nil
-//                }
-//                digitNumber = digitNumber * 10 + digitValue
             } else if operatorsTokens.contains(character) {
                 if let integerDigitNumber = Int(stringNumber) {
                     let operandToken = IntegerOperand(value: integerDigitNumber)
@@ -23,6 +19,7 @@ struct ExpressionLexicalAnalyzer {
                     let operandToken = RealNumberOperand(value: realDigitNumber)
                     tokenization.append(operandToken)
                 }
+                stringNumber = ""
                 
                 let operatorToken = Operator(value: character, priority: Operator.getOperatorPrecedence(operator: character))
                 tokenization.append(operatorToken)
