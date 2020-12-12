@@ -70,11 +70,28 @@ let expressions = [
     "12.23 + 34 * 45"
 ]
 
-for expression in expressions {
-    let a = expression.split(separator: " ")
-    if let b = Int(a[0]) {
-        print(b)
-    } else if let c = Double(a[0]) {
-        print(c)
+//for expression in expressions {
+//    let a = expression.split(separator: " ")
+//    if let b = Int(a[0]) {
+//        print(b)
+//    } else if let c = Double(a[0]) {
+//        print(c)
+//    }
+//}
+
+let a = ExpressionAnalyzer()
+let b = a.convertToToken(expression: expressions[0])
+
+print(b)
+
+if let c = b {
+    for d in c {
+        if let e = d as? IntegerOperand {
+            print(e.value)
+        } else if let f = d as? RealNumberOperand {
+            print(f.value)
+        } else if let g = d as? Operator {
+            print(g.value.rawValue)
+        }
     }
 }

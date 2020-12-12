@@ -1,9 +1,9 @@
 class Operator: Token {
-    enum Arithmetic {
-        case addition
-        case substraction
-        case multiplication
-        case division
+    enum Arithmetic: String, CaseIterable {
+        case addition = "+"
+        case substraction = "-"
+        case multiplication = "*"
+        case division = "/"
     }
     
     let value: Arithmetic
@@ -19,6 +19,21 @@ class Operator: Token {
             return .high
         case .addition, .substraction:
             return .middle
+        }
+    }
+    
+    static func convertStringOperatorToArithmeticOperator(`operator`: String) -> Operator.Arithmetic? {
+        switch `operator` {
+        case "+":
+            return .addition
+        case "-":
+            return .substraction
+        case "*":
+            return .multiplication
+        case "/":
+            return .division
+        default:
+            return nil
         }
     }
 }
