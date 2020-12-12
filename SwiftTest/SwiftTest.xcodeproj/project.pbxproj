@@ -16,7 +16,7 @@
 		41DA73B825828C1500C15197 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B725828C1500C15197 /* Operator.swift */; };
 		41DA73BB25828C6100C15197 /* OperatorPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */; };
 		41DA73BE25828CA100C15197 /* ExpressionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */; };
-		41DA73C125828CC700C15197 /* ExpressionSyntaxAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73C025828CC700C15197 /* ExpressionSyntaxAnalyzer.swift */; };
+		41DA73C125828CC700C15197 /* TokenAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73C025828CC700C15197 /* TokenAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +42,7 @@
 		41DA73B725828C1500C15197 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		41DA73BA25828C6100C15197 /* OperatorPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorPrecedence.swift; sourceTree = "<group>"; };
 		41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionAnalyzer.swift; sourceTree = "<group>"; };
-		41DA73C025828CC700C15197 /* ExpressionSyntaxAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionSyntaxAnalyzer.swift; sourceTree = "<group>"; };
+		41DA73C025828CC700C15197 /* TokenAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAnalyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 				415F1902258349B70041CD37 /* RealNumberOperand.swift */,
 				41DA73B725828C1500C15197 /* Operator.swift */,
 				41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */,
-				41DA73C025828CC700C15197 /* ExpressionSyntaxAnalyzer.swift */,
+				41DA73C025828CC700C15197 /* TokenAnalyzer.swift */,
 				415F1905258350650041CD37 /* Calculator.swift */,
 			);
 			path = Analyzer;
@@ -170,7 +170,7 @@
 				41DA73BB25828C6100C15197 /* OperatorPrecedence.swift in Sources */,
 				41DA73BE25828CA100C15197 /* ExpressionAnalyzer.swift in Sources */,
 				41DA73AE25828B5A00C15197 /* Stack.swift in Sources */,
-				41DA73C125828CC700C15197 /* ExpressionSyntaxAnalyzer.swift in Sources */,
+				41DA73C125828CC700C15197 /* TokenAnalyzer.swift in Sources */,
 				418BACD925810FE3002BD441 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
