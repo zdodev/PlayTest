@@ -1,19 +1,24 @@
 class Operator: Token {
-    let value: Character
+    enum Arithmetic {
+        case addition
+        case substraction
+        case multiplication
+        case division
+    }
     
-    init(value: Character, priority: OperatorPrecedence) {
+    let value: Arithmetic
+    
+    init(value: Arithmetic, priority: OperatorPrecedence) {
         self.value = value
         super.init(priority: priority)
     }
     
-    static func getOperatorPrecedence(`operator`: Character) -> OperatorPrecedence {
+    static func getOperatorPrecedence(`operator`: Arithmetic) -> OperatorPrecedence {
         switch `operator` {
-        case "*", "/":
+        case .multiplication, .division:
             return .high
-        case "+", "-":
+        case .addition, .substraction:
             return .middle
-        default:
-            return .low
         }
     }
 }
