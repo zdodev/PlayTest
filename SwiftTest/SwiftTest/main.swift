@@ -65,10 +65,16 @@
 //print(c.calculate(expression: b))
 
 let expressions = [
-    "20+4-3",
-    "1+2*3-4",
-    "1.2+3*5"
+    "12 + 23 - 34",
+    "12 + 23 * 34 - 45",
+    "12.23 + 34 * 45"
 ]
 
-let a = 3
-let b = 3.5
+for expression in expressions {
+    let a = expression.split(separator: " ")
+    if let b = Int(a[0]) {
+        print(b)
+    } else if let c = Double(a[0]) {
+        print(c)
+    }
+}
