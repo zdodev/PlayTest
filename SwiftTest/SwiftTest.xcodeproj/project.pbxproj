@@ -12,13 +12,15 @@
 		415F1906258350650041CD37 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F1905258350650041CD37 /* Calculator.swift */; };
 		418BACD925810FE3002BD441 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BACD825810FE3002BD441 /* main.swift */; };
 		41DA73AE25828B5A00C15197 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73AD25828B5A00C15197 /* Stack.swift */; };
-		41DA73B225828BC200C15197 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B125828BC200C15197 /* Token.swift */; };
+		41DA73B225828BC200C15197 /* DecimalToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B125828BC200C15197 /* DecimalToken.swift */; };
 		41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B425828C0000C15197 /* IntegerOperand.swift */; };
 		41DA73B825828C1500C15197 /* DecimalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B725828C1500C15197 /* DecimalOperator.swift */; };
 		41DA73BB25828C6100C15197 /* DecimalOperatorPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BA25828C6100C15197 /* DecimalOperatorPrecedence.swift */; };
 		41DA73BE25828CA100C15197 /* ExpressionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */; };
 		41DA73C125828CC700C15197 /* TokenAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73C025828CC700C15197 /* TokenAnalyzer.swift */; };
 		41E0AEC62585EDC6004250AD /* BinaryOperatorPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0AEC52585EDC6004250AD /* BinaryOperatorPrecedence.swift */; };
+		41E0AECA2585EE0B004250AD /* BinaryOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0AEC92585EE0B004250AD /* BinaryOperator.swift */; };
+		41E0AECE2585F430004250AD /* BinaryToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0AECD2585F430004250AD /* BinaryToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,13 +42,15 @@
 		418BACD525810FE3002BD441 /* SwiftTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		418BACD825810FE3002BD441 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		41DA73AD25828B5A00C15197 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		41DA73B125828BC200C15197 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		41DA73B125828BC200C15197 /* DecimalToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalToken.swift; sourceTree = "<group>"; };
 		41DA73B425828C0000C15197 /* IntegerOperand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerOperand.swift; sourceTree = "<group>"; };
 		41DA73B725828C1500C15197 /* DecimalOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalOperator.swift; sourceTree = "<group>"; };
 		41DA73BA25828C6100C15197 /* DecimalOperatorPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalOperatorPrecedence.swift; sourceTree = "<group>"; };
 		41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionAnalyzer.swift; sourceTree = "<group>"; };
 		41DA73C025828CC700C15197 /* TokenAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAnalyzer.swift; sourceTree = "<group>"; };
 		41E0AEC52585EDC6004250AD /* BinaryOperatorPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperatorPrecedence.swift; sourceTree = "<group>"; };
+		41E0AEC92585EE0B004250AD /* BinaryOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperator.swift; sourceTree = "<group>"; };
+		41E0AECD2585F430004250AD /* BinaryToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,7 @@
 		41DA73A92582758600C15197 /* Analyzer */ = {
 			isa = PBXGroup;
 			children = (
-				41DA73B125828BC200C15197 /* Token.swift */,
+				41DA73B125828BC200C15197 /* DecimalToken.swift */,
 				41DA73C025828CC700C15197 /* TokenAnalyzer.swift */,
 				41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */,
 			);
@@ -130,7 +134,9 @@
 		41E0AEC42585EDA0004250AD /* BinaryOperation */ = {
 			isa = PBXGroup;
 			children = (
+				41E0AECD2585F430004250AD /* BinaryToken.swift */,
 				41E0AEC52585EDC6004250AD /* BinaryOperatorPrecedence.swift */,
+				41E0AEC92585EE0B004250AD /* BinaryOperator.swift */,
 			);
 			path = BinaryOperation;
 			sourceTree = "<group>";
@@ -193,13 +199,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				415F1903258349B70041CD37 /* RealNumberOperand.swift in Sources */,
-				41DA73B225828BC200C15197 /* Token.swift in Sources */,
+				41DA73B225828BC200C15197 /* DecimalToken.swift in Sources */,
+				41E0AECE2585F430004250AD /* BinaryToken.swift in Sources */,
 				411BC1E725851605008DCEC1 /* Calculation.swift in Sources */,
 				41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */,
 				415F1906258350650041CD37 /* Calculator.swift in Sources */,
 				41DA73B825828C1500C15197 /* DecimalOperator.swift in Sources */,
 				41DA73BB25828C6100C15197 /* DecimalOperatorPrecedence.swift in Sources */,
 				41DA73BE25828CA100C15197 /* ExpressionAnalyzer.swift in Sources */,
+				41E0AECA2585EE0B004250AD /* BinaryOperator.swift in Sources */,
 				41E0AEC62585EDC6004250AD /* BinaryOperatorPrecedence.swift in Sources */,
 				41DA73AE25828B5A00C15197 /* Stack.swift in Sources */,
 				41DA73C125828CC700C15197 /* TokenAnalyzer.swift in Sources */,

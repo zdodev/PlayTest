@@ -1,4 +1,4 @@
-class IntegerOperand: Token {
+class IntegerOperand: DecimalToken {
     let value: Int
 
     init(value: Int) {

@@ -1,4 +1,4 @@
-class RealNumberOperand: Token {
+class RealNumberOperand: DecimalToken {
     let value: Double
     
     init(value: Double) {

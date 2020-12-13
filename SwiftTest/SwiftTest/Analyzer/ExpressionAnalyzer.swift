@@ -1,5 +1,5 @@
 struct ExpressionAnalyzer {
-    func convertExpressionToToken(expression: String) -> [Token]? {
+    func convertExpressionToToken(expression: String) -> [DecimalToken]? {
         let splitString = expression.split(separator: " ")
         let arithmeticOperators: [String] = {
             var operatorRawValues = [String]()
@@ -8,7 +8,7 @@ struct ExpressionAnalyzer {
             }
             return operatorRawValues
         }()
-        var tokenExpression = [Token]()
+        var tokenExpression = [DecimalToken]()
         
         for element in splitString {
             let stringElement = String(element)

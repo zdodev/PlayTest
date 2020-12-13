@@ -1,6 +1,6 @@
 struct Calculator {
-    func calculate(postfixTokenExpression: [Token]) -> Token? {
-        var temporaryOperandStorage = Stack<Token>()
+    func calculate(postfixTokenExpression: [DecimalToken]) -> DecimalToken? {
+        var temporaryOperandStorage = Stack<DecimalToken>()
 
         for token in postfixTokenExpression {
             switch token {
@@ -11,7 +11,7 @@ struct Calculator {
             case let operatorToken as DecimalOperator:
                 guard let secondToken = temporaryOperandStorage.pop() else { return nil }
                 guard let firstToken = temporaryOperandStorage.pop() else { return nil }
-                var intermediateCalculationToken: Token?
+                var intermediateCalculationToken: DecimalToken?
                 
                 if let secondOperand = secondToken as? IntegerOperand {
                     if let firstOperand = firstToken as? IntegerOperand {

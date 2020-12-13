@@ -1,4 +1,4 @@
-class DecimalOperator: Token {
+class DecimalOperator: DecimalToken {
     enum Arithmetic: String, CaseIterable {
         case addition = "+"
         case substraction = "-"

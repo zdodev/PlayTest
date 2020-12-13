@@ -1,4 +1,4 @@
-class Token {
+class DecimalToken {
     private let priority: DecimalOperatorPrecedence
     
     init(priority: DecimalOperatorPrecedence) {
@@ -6,12 +6,12 @@ class Token {
     }
 }
 
-extension Token: Comparable {
-    static func < (lhs: Token, rhs: Token) -> Bool {
+extension DecimalToken: Comparable {
+    static func < (lhs: DecimalToken, rhs: DecimalToken) -> Bool {
         lhs.priority < rhs.priority
     }
     
-    static func == (lhs: Token, rhs: Token) -> Bool {
+    static func == (lhs: DecimalToken, rhs: DecimalToken) -> Bool {
         lhs.priority == rhs.priority
     }
 }

@@ -1,6 +1,6 @@
 struct TokenAnalyzer {
-    func convertInfixToPostfix(tokenExpression: [Token]) -> [Token]? {
-        var postfixExpression = [Token]()
+    func convertInfixToPostfix(tokenExpression: [DecimalToken]) -> [DecimalToken]? {
+        var postfixExpression = [DecimalToken]()
         var temporaryOperatorStorage = Stack<DecimalOperator>()
         
         for token in tokenExpression {
