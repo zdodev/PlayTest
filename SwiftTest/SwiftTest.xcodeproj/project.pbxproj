@@ -74,15 +74,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		411BC1E9258517CD008DCEC1 /* Calculator */ = {
+		411BC1E9258517CD008DCEC1 /* BinaryCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				411BC1E625851605008DCEC1 /* DecimalCalculation.swift */,
-				415F1905258350650041CD37 /* DecimalCalculator.swift */,
 				41C30FDC258631DC00F87BA0 /* BinaryCalculation.swift */,
 				41C30FDF2586379B00F87BA0 /* BinaryCalculator.swift */,
 			);
-			path = Calculator;
+			path = BinaryCalculator;
 			sourceTree = "<group>";
 		};
 		418BACCC25810FE3002BD441 = {
@@ -108,21 +106,31 @@
 				41DA73AC25828B4A00C15197 /* Data Type */,
 				41DA73A92582758600C15197 /* DecimalAnalyzer */,
 				41E0AEC02585EC17004250AD /* DecimalOperation */,
+				41C30FE22586464900F87BA0 /* DecimalCalculator */,
 				41E0AEC42585EDA0004250AD /* BinaryAnalyzer */,
-				41C30FCD2586230500F87BA0 /* BianryOperation */,
-				411BC1E9258517CD008DCEC1 /* Calculator */,
+				41C30FCD2586230500F87BA0 /* BinaryOperation */,
+				411BC1E9258517CD008DCEC1 /* BinaryCalculator */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
 		};
-		41C30FCD2586230500F87BA0 /* BianryOperation */ = {
+		41C30FCD2586230500F87BA0 /* BinaryOperation */ = {
 			isa = PBXGroup;
 			children = (
 				41E0AEC52585EDC6004250AD /* BinaryOperatorPrecedence.swift */,
 				41E0AEC92585EE0B004250AD /* BinaryOperator.swift */,
 				41C30FD3258625F500F87BA0 /* BinaryOperand.swift */,
 			);
-			path = BianryOperation;
+			path = BinaryOperation;
+			sourceTree = "<group>";
+		};
+		41C30FE22586464900F87BA0 /* DecimalCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				411BC1E625851605008DCEC1 /* DecimalCalculation.swift */,
+				415F1905258350650041CD37 /* DecimalCalculator.swift */,
+			);
+			path = DecimalCalculator;
 			sourceTree = "<group>";
 		};
 		41DA73A92582758600C15197 /* DecimalAnalyzer */ = {
