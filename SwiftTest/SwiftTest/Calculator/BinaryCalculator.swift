@@ -1,32 +1,27 @@
-struct DecimalCalculator {
-    func calculate(postfixTokenExpression: [DecimalToken]) -> DecimalToken? {
-        var temporaryOperandStorage = Stack<DecimalToken>()
+struct BinaryCalculator {
+    func calculate(postfixTokenExpression: [BinaryToken]) -> BinaryToken? {
+        var temporaryOperandStorage = Stack<BinaryToken>()
 
         for token in postfixTokenExpression {
             switch token {
-            case let integerOperandToken as IntegerOperand:
-                temporaryOperandStorage.push(element: integerOperandToken)
-            case let realNumberOperandToken as RealNumberOperand:
-                temporaryOperandStorage.push(element: realNumberOperandToken)
-            case let operatorToken as DecimalOperator:
-                guard let secondToken = temporaryOperandStorage.pop() else { return nil }
-                guard let firstToken = temporaryOperandStorage.pop() else { return nil }
-                var intermediateCalculationToken: DecimalToken?
+            case let binaryOperandToken as BinaryOperand:
+                temporaryOperandStorage.push(element: binaryOperandToken)
+            case let operatorToken as BinaryOperator:
+                var intermediateCalculationToken: BinaryToken?
                 
-                if let secondOperand = secondToken as? IntegerOperand {
-                    if let firstOperand = firstToken as? IntegerOperand {
-                        intermediateCalculationToken = IntegerOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
-                    } else if let firstOperand = firstToken as? RealNumberOperand {
-                        intermediateCalculationToken = RealNumberOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
-                    }
-                } else if let secondOperand = secondToken as? RealNumberOperand {
-                    if let firstOperand = firstToken as? IntegerOperand {
-                        intermediateCalculationToken = RealNumberOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
-                    } else if let firstOperand = firstToken as? RealNumberOperand {
-                        intermediateCalculationToken = RealNumberOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
-                    }
+                if operatorToken.value == .bitwiseNOT {
+                    guard let firstToken = temporaryOperandStorage.pop() else { return nil }
+                    guard let singleOperand = firstToken as? BinaryOperand else { return nil }
+                    intermediateCalculationToken = BinaryOperand(value: BinaryCalculation.calculate(singleOperand.value, 0, .bitwiseNOT))
+                } else {
+                    guard let secondToken = temporaryOperandStorage.pop() else { return nil }
+                    guard let firstToken = temporaryOperandStorage.pop() else { return nil }
+                    guard let secondOperand = secondToken as? BinaryOperand else { return nil }
+                    guard let firstOperand = firstToken as? BinaryOperand else { return nil }
+                    
+                    intermediateCalculationToken = BinaryOperand(value: BinaryCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
                 }
-                
+
                 guard let intermediateCalculationResult = intermediateCalculationToken else { return nil }
                 temporaryOperandStorage.push(element: intermediateCalculationResult)
             default:
