@@ -18,6 +18,7 @@
 		41DA73BB25828C6100C15197 /* DecimalOperatorPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BA25828C6100C15197 /* DecimalOperatorPrecedence.swift */; };
 		41DA73BE25828CA100C15197 /* ExpressionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */; };
 		41DA73C125828CC700C15197 /* TokenAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73C025828CC700C15197 /* TokenAnalyzer.swift */; };
+		41E0AEC62585EDC6004250AD /* BinaryOperatorPrecedence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0AEC52585EDC6004250AD /* BinaryOperatorPrecedence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		41DA73BA25828C6100C15197 /* DecimalOperatorPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalOperatorPrecedence.swift; sourceTree = "<group>"; };
 		41DA73BD25828CA100C15197 /* ExpressionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionAnalyzer.swift; sourceTree = "<group>"; };
 		41DA73C025828CC700C15197 /* TokenAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAnalyzer.swift; sourceTree = "<group>"; };
+		41E0AEC52585EDC6004250AD /* BinaryOperatorPrecedence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperatorPrecedence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				41DA73AC25828B4A00C15197 /* Data Type */,
 				41DA73A92582758600C15197 /* Analyzer */,
 				41E0AEC02585EC17004250AD /* DecimalOperation */,
+				41E0AEC42585EDA0004250AD /* BinaryOperation */,
 				411BC1E9258517CD008DCEC1 /* Calculator */,
 			);
 			path = SwiftTest;
@@ -122,6 +125,14 @@
 				415F1902258349B70041CD37 /* RealNumberOperand.swift */,
 			);
 			path = DecimalOperation;
+			sourceTree = "<group>";
+		};
+		41E0AEC42585EDA0004250AD /* BinaryOperation */ = {
+			isa = PBXGroup;
+			children = (
+				41E0AEC52585EDC6004250AD /* BinaryOperatorPrecedence.swift */,
+			);
+			path = BinaryOperation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				41DA73B825828C1500C15197 /* DecimalOperator.swift in Sources */,
 				41DA73BB25828C6100C15197 /* DecimalOperatorPrecedence.swift in Sources */,
 				41DA73BE25828CA100C15197 /* ExpressionAnalyzer.swift in Sources */,
+				41E0AEC62585EDC6004250AD /* BinaryOperatorPrecedence.swift in Sources */,
 				41DA73AE25828B5A00C15197 /* Stack.swift in Sources */,
 				41DA73C125828CC700C15197 /* TokenAnalyzer.swift in Sources */,
 				418BACD925810FE3002BD441 /* main.swift in Sources */,
