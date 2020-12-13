@@ -1,7 +1,7 @@
 class Token {
-    private let priority: OperatorPrecedence
+    private let priority: DecimalOperatorPrecedence
     
-    init(priority: OperatorPrecedence) {
+    init(priority: DecimalOperatorPrecedence) {
         self.priority = priority
     }
 }

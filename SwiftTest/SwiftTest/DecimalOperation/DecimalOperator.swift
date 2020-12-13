@@ -1,4 +1,4 @@
-class Operator: Token {
+class DecimalOperator: Token {
     enum Arithmetic: String, CaseIterable {
         case addition = "+"
         case substraction = "-"
@@ -8,12 +8,12 @@ class Operator: Token {
     
     let value: Arithmetic
     
-    init(value: Arithmetic, priority: OperatorPrecedence) {
+    init(value: Arithmetic, priority: DecimalOperatorPrecedence) {
         self.value = value
         super.init(priority: priority)
     }
     
-    static func getOperatorPrecedence(`operator`: Arithmetic) -> OperatorPrecedence {
+    static func getOperatorPrecedence(`operator`: Arithmetic) -> DecimalOperatorPrecedence {
         switch `operator` {
         case .multiplication, .division:
             return .high
@@ -22,7 +22,7 @@ class Operator: Token {
         }
     }
     
-    static func convertStringOperatorToArithmeticOperator(`operator`: String) -> Operator.Arithmetic? {
+    static func convertStringOperatorToArithmeticOperator(`operator`: String) -> DecimalOperator.Arithmetic? {
         switch `operator` {
         case "+":
             return .addition

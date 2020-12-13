@@ -1,5 +1,5 @@
 struct Calculation {
-    static func calculate(_ lhs: Int, _ rhs: Int, _ `operator`: Operator.Arithmetic) -> Int {
+    static func calculate(_ lhs: Int, _ rhs: Int, _ `operator`: DecimalOperator.Arithmetic) -> Int {
         switch `operator` {
         case .addition:
             return lhs + rhs
@@ -12,7 +12,7 @@ struct Calculation {
         }
     }
     
-    static func calculate(_ lhs: Int, _ rhs: Double, _ `operator`: Operator.Arithmetic) -> Double {
+    static func calculate(_ lhs: Int, _ rhs: Double, _ `operator`: DecimalOperator.Arithmetic) -> Double {
         switch `operator` {
         case .addition:
             return Double(lhs) + rhs
@@ -25,7 +25,7 @@ struct Calculation {
         }
     }
     
-    static func calculate(_ lhs: Double, _ rhs: Int, _ `operator`: Operator.Arithmetic) -> Double {
+    static func calculate(_ lhs: Double, _ rhs: Int, _ `operator`: DecimalOperator.Arithmetic) -> Double {
         switch `operator` {
         case .addition:
             return lhs + Double(rhs)
@@ -38,7 +38,7 @@ struct Calculation {
         }
     }
     
-    static func calculate(_ lhs: Double, _ rhs: Double, _ `operator`: Operator.Arithmetic) -> Double {
+    static func calculate(_ lhs: Double, _ rhs: Double, _ `operator`: DecimalOperator.Arithmetic) -> Double {
         switch `operator` {
         case .addition:
             return lhs + rhs

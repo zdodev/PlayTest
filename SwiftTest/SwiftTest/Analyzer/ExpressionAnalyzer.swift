@@ -3,7 +3,7 @@ struct ExpressionAnalyzer {
         let splitString = expression.split(separator: " ")
         let arithmeticOperators: [String] = {
             var operatorRawValues = [String]()
-            Operator.Arithmetic.allCases.forEach {
+            DecimalOperator.Arithmetic.allCases.forEach {
                 operatorRawValues.append($0.rawValue)
             }
             return operatorRawValues
@@ -17,10 +17,10 @@ struct ExpressionAnalyzer {
             } else if let realNumber = Double(stringElement) {
                 tokenExpression.append(RealNumberOperand(value: realNumber))
             } else if arithmeticOperators.contains(stringElement) {
-                guard let arithmeticOperator = Operator.convertStringOperatorToArithmeticOperator(operator: stringElement) else {
+                guard let arithmeticOperator = DecimalOperator.convertStringOperatorToArithmeticOperator(operator: stringElement) else {
                     return nil
                 }
-                tokenExpression.append(Operator(value: arithmeticOperator, priority: Operator.getOperatorPrecedence(operator: arithmeticOperator)))
+                tokenExpression.append(DecimalOperator(value: arithmeticOperator, priority: DecimalOperator.getOperatorPrecedence(operator: arithmeticOperator)))
             }
         }
         

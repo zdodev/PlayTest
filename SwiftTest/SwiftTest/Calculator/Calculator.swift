@@ -8,7 +8,7 @@ struct Calculator {
                 temporaryOperandStorage.push(element: integerOperandToken)
             case let realNumberOperandToken as RealNumberOperand:
                 temporaryOperandStorage.push(element: realNumberOperandToken)
-            case let operatorToken as Operator:
+            case let operatorToken as DecimalOperator:
                 guard let secondToken = temporaryOperandStorage.pop() else { return nil }
                 guard let firstToken = temporaryOperandStorage.pop() else { return nil }
                 var intermediateCalculationToken: Token?

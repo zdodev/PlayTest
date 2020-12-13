@@ -1,7 +1,7 @@
 struct TokenAnalyzer {
     func convertInfixToPostfix(tokenExpression: [Token]) -> [Token]? {
         var postfixExpression = [Token]()
-        var temporaryOperatorStorage = Stack<Operator>()
+        var temporaryOperatorStorage = Stack<DecimalOperator>()
         
         for token in tokenExpression {
             switch token {
@@ -9,7 +9,7 @@ struct TokenAnalyzer {
                 postfixExpression.append(integerToken)
             case let realNumberToken as RealNumberOperand:
                 postfixExpression.append(realNumberToken)
-            case let operatorToken as Operator:
+            case let operatorToken as DecimalOperator:
                 if temporaryOperatorStorage.isEmpty {
                     temporaryOperatorStorage.push(element: operatorToken)
                 } else {
