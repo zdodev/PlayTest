@@ -14,6 +14,8 @@
 		41C30FCF2586234A00F87BA0 /* BinaryTokenAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C30FCE2586234A00F87BA0 /* BinaryTokenAnalyzer.swift */; };
 		41C30FD4258625F500F87BA0 /* BinaryOperand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C30FD3258625F500F87BA0 /* BinaryOperand.swift */; };
 		41C30FD72586271500F87BA0 /* BinaryExpressionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C30FD62586271500F87BA0 /* BinaryExpressionAnalyzer.swift */; };
+		41C30FDD258631DC00F87BA0 /* BinaryCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C30FDC258631DC00F87BA0 /* BinaryCalculation.swift */; };
+		41C30FE02586379B00F87BA0 /* BinaryCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C30FDF2586379B00F87BA0 /* BinaryCalculator.swift */; };
 		41DA73AE25828B5A00C15197 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73AD25828B5A00C15197 /* Stack.swift */; };
 		41DA73B225828BC200C15197 /* DecimalToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B125828BC200C15197 /* DecimalToken.swift */; };
 		41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA73B425828C0000C15197 /* IntegerOperand.swift */; };
@@ -47,6 +49,8 @@
 		41C30FCE2586234A00F87BA0 /* BinaryTokenAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTokenAnalyzer.swift; sourceTree = "<group>"; };
 		41C30FD3258625F500F87BA0 /* BinaryOperand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperand.swift; sourceTree = "<group>"; };
 		41C30FD62586271500F87BA0 /* BinaryExpressionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryExpressionAnalyzer.swift; sourceTree = "<group>"; };
+		41C30FDC258631DC00F87BA0 /* BinaryCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCalculation.swift; sourceTree = "<group>"; };
+		41C30FDF2586379B00F87BA0 /* BinaryCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCalculator.swift; sourceTree = "<group>"; };
 		41DA73AD25828B5A00C15197 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		41DA73B125828BC200C15197 /* DecimalToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalToken.swift; sourceTree = "<group>"; };
 		41DA73B425828C0000C15197 /* IntegerOperand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerOperand.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			children = (
 				411BC1E625851605008DCEC1 /* DecimalCalculation.swift */,
 				415F1905258350650041CD37 /* DecimalCalculator.swift */,
+				41C30FDC258631DC00F87BA0 /* BinaryCalculation.swift */,
+				41C30FDF2586379B00F87BA0 /* BinaryCalculator.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				415F1903258349B70041CD37 /* RealNumberOperand.swift in Sources */,
 				41DA73B225828BC200C15197 /* DecimalToken.swift in Sources */,
 				41E0AECE2585F430004250AD /* BinaryToken.swift in Sources */,
+				41C30FE02586379B00F87BA0 /* BinaryCalculator.swift in Sources */,
 				411BC1E725851605008DCEC1 /* DecimalCalculation.swift in Sources */,
 				41DA73B525828C0000C15197 /* IntegerOperand.swift in Sources */,
 				41C30FCF2586234A00F87BA0 /* BinaryTokenAnalyzer.swift in Sources */,
@@ -227,6 +234,7 @@
 				41DA73BB25828C6100C15197 /* DecimalOperatorPrecedence.swift in Sources */,
 				41DA73BE25828CA100C15197 /* DecimalExpressionAnalyzer.swift in Sources */,
 				41E0AECA2585EE0B004250AD /* BinaryOperator.swift in Sources */,
+				41C30FDD258631DC00F87BA0 /* BinaryCalculation.swift in Sources */,
 				41E0AEC62585EDC6004250AD /* BinaryOperatorPrecedence.swift in Sources */,
 				41C30FD4258625F500F87BA0 /* BinaryOperand.swift in Sources */,
 				41DA73AE25828B5A00C15197 /* Stack.swift in Sources */,

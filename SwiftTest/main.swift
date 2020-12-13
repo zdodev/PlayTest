@@ -18,12 +18,20 @@ let expressions = [
 //
 let binaryExpressions = [
     "1010 + 101",
-    "101010",
+    "~ 1010 + 10",
     "10101010"
 ]
 
 let binaryExpressionAnalyzer = BinaryExpressionAnalyzer()
-let binaryToken = binaryExpressionAnalyzer.convertExpressionToToken(expression: binaryExpressions[0])!
+let binaryToken = binaryExpressionAnalyzer.convertExpressionToToken(expression: binaryExpressions[1])!
 let binaryTokenAnalyzer = BinaryTokenAnalyzer()
 let binary = binaryTokenAnalyzer.convertInfixToPostfix(tokenExpression: binaryToken)
-print(binary)
+//let binaryCalculator = BinaryCalculat
+
+for to in binary! {
+    if let operand = to as? BinaryOperand {
+        print(operand.value)
+    } else if let `operator` = to as? BinaryOperator {
+        print(`operator`.value)
+    }
+}
