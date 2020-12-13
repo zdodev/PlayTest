@@ -1,4 +1,4 @@
-struct Calculator {
+struct DecimalCalculator {
     func calculate(postfixTokenExpression: [DecimalToken]) -> DecimalToken? {
         var temporaryOperandStorage = Stack<DecimalToken>()
 
@@ -15,15 +15,15 @@ struct Calculator {
                 
                 if let secondOperand = secondToken as? IntegerOperand {
                     if let firstOperand = firstToken as? IntegerOperand {
-                        intermediateCalculationToken = IntegerOperand(value: Calculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
+                        intermediateCalculationToken = IntegerOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
                     } else if let firstOperand = firstToken as? RealNumberOperand {
-                        intermediateCalculationToken = RealNumberOperand(value: Calculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
+                        intermediateCalculationToken = RealNumberOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
                     }
                 } else if let secondOperand = secondToken as? RealNumberOperand {
                     if let firstOperand = firstToken as? IntegerOperand {
-                        intermediateCalculationToken = RealNumberOperand(value: Calculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
+                        intermediateCalculationToken = RealNumberOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
                     } else if let firstOperand = firstToken as? RealNumberOperand {
-                        intermediateCalculationToken = RealNumberOperand(value: Calculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
+                        intermediateCalculationToken = RealNumberOperand(value: DecimalCalculation.calculate(firstOperand.value, secondOperand.value, operatorToken.value))
                     }
                 }
                 

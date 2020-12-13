@@ -22,7 +22,7 @@ class DecimalOperator: DecimalToken {
         }
     }
     
-    static func convertStringOperatorToArithmeticOperator(`operator`: String) -> DecimalOperator.Arithmetic? {
+    static func convertStringOperatorToArithmeticOperator(`operator`: String) -> Arithmetic? {
         switch `operator` {
         case "+":
             return .addition

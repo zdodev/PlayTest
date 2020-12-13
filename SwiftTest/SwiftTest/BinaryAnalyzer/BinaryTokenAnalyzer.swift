@@ -1,15 +1,13 @@
-struct TokenAnalyzer {
-    func convertInfixToPostfix(tokenExpression: [DecimalToken]) -> [DecimalToken]? {
-        var postfixExpression = [DecimalToken]()
-        var temporaryOperatorStorage = Stack<DecimalOperator>()
+struct BinaryTokenAnalyzer {
+    func convertInfixToPostfix(tokenExpression: [BinaryToken]) -> [BinaryToken]? {
+        var postfixExpression = [BinaryToken]()
+        var temporaryOperatorStorage = Stack<BinaryOperator>()
         
         for token in tokenExpression {
             switch token {
-            case let integerToken as IntegerOperand:
-                postfixExpression.append(integerToken)
-            case let realNumberToken as RealNumberOperand:
-                postfixExpression.append(realNumberToken)
-            case let operatorToken as DecimalOperator:
+            case let binaryToken as BinaryOperand:
+                postfixExpression.append(binaryToken)
+            case let operatorToken as BinaryOperator:
                 if temporaryOperatorStorage.isEmpty {
                     temporaryOperatorStorage.push(element: operatorToken)
                 } else {

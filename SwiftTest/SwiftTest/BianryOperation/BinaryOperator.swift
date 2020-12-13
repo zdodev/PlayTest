@@ -32,16 +32,28 @@ class BinaryOperator: BinaryToken {
         }
     }
     
-    static func convertStringOperatorToArithmeticOperator(`operator`: String) -> DecimalOperator.Arithmetic? {
+    static func convertStringOperatorToBinaryOperator(`operator`: String) -> `Operator`? {
         switch `operator` {
+        case "~":
+            return .bitwiseNOT
+        case "<<":
+            return .bitwistLeftShift
+        case ">>":
+            return .bitwiseRightShift
+        case "&":
+            return .bitwiseAND
+        case "|":
+            return .bitwiseOR
+        case "^":
+            return .bitwiseNOT
+        case "↑":
+            return .bitwiseNAND
+        case "↓":
+            return .bitwiseNOR
         case "+":
             return .addition
         case "-":
             return .substraction
-        case "*":
-            return .multiplication
-        case "/":
-            return .division
         default:
             return nil
         }

@@ -1,4 +1,4 @@
-struct ExpressionAnalyzer {
+struct DecimalExpressionAnalyzer {
     func convertExpressionToToken(expression: String) -> [DecimalToken]? {
         let splitString = expression.split(separator: " ")
         let arithmeticOperators: [String] = {

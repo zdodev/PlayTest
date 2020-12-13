@@ -1,4 +1,4 @@
-struct Calculation {
+struct DecimalCalculation {
     static func calculate(_ lhs: Int, _ rhs: Int, _ `operator`: DecimalOperator.Arithmetic) -> Int {
         switch `operator` {
         case .addition:
