@@ -1,35 +1,25 @@
-protocol Calculatable {
-    var fileName: String { get set }
-    func add()
-}
-
-class decimalClass: Calculatable {
-    var fileName: String = "file"
+struct Point: Equatable, Hashable {
+    var x: Int
+    var y: Int
     
-    func add() {
-        print("decimal 더하기...")
+    // Equatable 기능 구현
+    static func ==(lhs: Point, rhs: Point) -> Bool {
+        lhs.x == rhs.x && lhs.y == rhs.y
     }
-    func sub() {
-        print("decimal 빼기...")
-    }
-    func mul() {
-        print("decimal 빼기...")
-    }
-    func div() {
-        print("더좋은 나누셈")
+    
+    // Hashable 기능 구현
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(x)
+        hasher.combine(y)
     }
 }
 
-class binaryClass: Calculatable {
-    var fileName: String = "file"
+let currentPosition = Point(x: 1, y: 2)
+let anotherPosition = Point(x: 1, y: 2)
+let nextPosition = Point(x: 3, y: 4)
 
-    func add() {
-        print("binary 더하기...")
-    }
+var positions: Set = [currentPosition, nextPosition]
+if positions.contains(anotherPosition) {
+    print(positions.contains(anotherPosition))
 }
-
-var a: Calculatable = decimalClass()
-a.add()
-
-a = binaryClass()
-a.add()
+// true
