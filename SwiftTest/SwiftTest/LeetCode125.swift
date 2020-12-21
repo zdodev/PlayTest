@@ -20,7 +20,7 @@ enum LeetCode125{
         }
     }
     
-    class Solution2 {
+    class Solution3 {
         func isPalindrom(_ s: String) -> Bool {
             let lowerString = s.lowercased()
             let alnumString = lowerString.replacingOccurrences(of: "[^a-z0-9]", with: "", options: .regularExpression)

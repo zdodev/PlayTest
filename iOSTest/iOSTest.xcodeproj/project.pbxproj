@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		410048F9258BBF4C00DC4DB0 /* iOSTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410048F8258BBF4C00DC4DB0 /* iOSTestTests.swift */; };
-		41004903258BBF8400DC4DB0 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41004902258BBF8400DC4DB0 /* Calculator.swift */; };
 		41623B9E257D05AD001D557B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41623B9D257D05AD001D557B /* AppDelegate.swift */; };
 		41623BA0257D05AD001D557B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41623B9F257D05AD001D557B /* SceneDelegate.swift */; };
 		41623BA2257D05AD001D557B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41623BA1257D05AD001D557B /* ViewController.swift */; };
@@ -31,7 +30,6 @@
 		410048F6258BBF4C00DC4DB0 /* iOSTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		410048F8258BBF4C00DC4DB0 /* iOSTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestTests.swift; sourceTree = "<group>"; };
 		410048FA258BBF4C00DC4DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41004902258BBF8400DC4DB0 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		41623B9A257D05AD001D557B /* iOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41623B9D257D05AD001D557B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41623B9F257D05AD001D557B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				41623BA6257D05AD001D557B /* Assets.xcassets */,
 				41623BA8257D05AD001D557B /* LaunchScreen.storyboard */,
 				41623BAB257D05AD001D557B /* Info.plist */,
-				41004902258BBF8400DC4DB0 /* Calculator.swift */,
 			);
 			path = iOSTest;
 			sourceTree = "<group>";
@@ -211,7 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41623BA2257D05AD001D557B /* ViewController.swift in Sources */,
-				41004903258BBF8400DC4DB0 /* Calculator.swift in Sources */,
 				41623B9E257D05AD001D557B /* AppDelegate.swift in Sources */,
 				41623BA0257D05AD001D557B /* SceneDelegate.swift in Sources */,
 			);
