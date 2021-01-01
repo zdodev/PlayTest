@@ -1,21 +1,9 @@
 import Foundation
 import SwiftSoup
 
-let requestURL = "https://www.investing.com"
+let investingURL = "https://www.investing.com"
 
-//do {
-//   let html = "<html><head><title>First parse</title></head>"
-//       + "<body><p>Parsed HTML into a doc.</p></body></html>"
-//   let doc: Document = try SwiftSoup.parse(html)
-////   return try doc.text()
-//    try print(doc.text())
-//} catch Exception.Error(let type, let message) {
-//    print(message)
-//} catch {
-//    print("error")
-//}
-
-if let url = URL(string: requestURL) {
+if let url = URL(string: investingURL) {
     let html = try String(contentsOf: url)
     let doc = try parse(html)
     let elements = try doc.select("#navMenu > ul > li:nth-child(1) > a")
