@@ -9,17 +9,22 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-//    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        let mainViewController = ViewController()
-//        window?.rootViewController = mainViewController
-//        window?.makeKeyAndVisible()
+        print("application(_:didFinishLaunchingWithOptions)...")
         
         return true
+    }
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("application(_:willFinishLaunchingWithOptions)...")
+        
+        return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("applicationWillTerminate(_:)")
     }
 
     // MARK: UISceneSession Lifecycle
