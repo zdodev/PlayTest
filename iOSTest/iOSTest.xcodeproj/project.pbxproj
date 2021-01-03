@@ -13,6 +13,7 @@
 		41623BA2257D05AD001D557B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41623BA1257D05AD001D557B /* ViewController.swift */; };
 		41623BA7257D05AD001D557B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41623BA6257D05AD001D557B /* Assets.xcassets */; };
 		41623BAA257D05AD001D557B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41623BA8257D05AD001D557B /* LaunchScreen.storyboard */; };
+		41F1DE2125A1F68300C2C5A5 /* TestBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F1DE2025A1F68300C2C5A5 /* TestBoard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		41623BA6257D05AD001D557B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41623BA9257D05AD001D557B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41623BAB257D05AD001D557B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F1DE2025A1F68300C2C5A5 /* TestBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestBoard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				41623B9D257D05AD001D557B /* AppDelegate.swift */,
 				41623B9F257D05AD001D557B /* SceneDelegate.swift */,
 				41623BA1257D05AD001D557B /* ViewController.swift */,
+				41F1DE2025A1F68300C2C5A5 /* TestBoard.storyboard */,
 				41623BA6257D05AD001D557B /* Assets.xcassets */,
 				41623BA8257D05AD001D557B /* LaunchScreen.storyboard */,
 				41623BAB257D05AD001D557B /* Info.plist */,
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41623BAA257D05AD001D557B /* LaunchScreen.storyboard in Resources */,
+				41F1DE2125A1F68300C2C5A5 /* TestBoard.storyboard in Resources */,
 				41623BA7257D05AD001D557B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,6 +2,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var loginButton: UIButton!
+    var sum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +14,13 @@ class ViewController: UIViewController {
         loginButton.backgroundColor = .black
         loginButton.tintColor = .cyan
         view.addSubview(loginButton)
+        
+        var count = 0
+        for row in 5...10 {
+            count += 1
+            sum += row
+        }
+        print("총 합은 \(self.sum), \(count)ghl 실행되었습니다.")
     }
 }
 
