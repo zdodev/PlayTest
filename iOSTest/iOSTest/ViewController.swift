@@ -1,3 +1,4 @@
+import Foundation
 import UIKit
 
 class ViewController: UIViewController {
@@ -21,6 +22,9 @@ class ViewController: UIViewController {
             sum += row
         }
         print("총 합은 \(self.sum), \(count)ghl 실행되었습니다.")
+        
+        let processInfo = ProcessInfo.processInfo
+        print(processInfo)
     }
 }
 
