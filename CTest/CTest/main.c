@@ -1,11 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "InfixToPostfix.h"
 
 int main(int argc, const char *argv[]) {
-    char exp1[] = "1+2*3*4";
+    int pid = 0;
     
-    convToRPNExp(exp1);
+    pid = fork();
     
-    printf("%s\n", exp1);
+    if (pid < 0) {
+        fprintf(stderr, "Fork Failed");
+        exit(1);
+    } else if (pid == 0) {
+        execlp("/bin/ls", "-l");
+    } else {
+        wait(NULL);
+        printf("Child Complete");
+    }
+    
+    return 0;
 }
