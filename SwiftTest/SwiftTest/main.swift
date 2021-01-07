@@ -17,7 +17,35 @@ import Foundation
 ///html/body/div[3]
 //#navMenu > ul > li:nth-child(1) > a
 
-var decimal = Decimal(0.7)
-for index in 1...100 {
-    print(decimal * Decimal(index))
+struct Point: CustomStringConvertible {
+    var description: String = "(x, y)"
+    
+    var x: Int
+    var y: Int
+}
+
+let point = Point(x: 10, y: 20)
+
+print(point.description) // X, 직접 프로퍼티에 접근하지 마라.
+print(point)
+
+struct Point2<T: CustomStringConvertible> {
+    var description: String = "포인트2"
+    var x: T
+    var y: T
+}
+
+let point2 = Point2(x: 3, y: 4)
+print(point2)
+let e = Int(3)
+print(3.description)
+
+class LinkedList {
+    var node: LinkedList
+    var data: Int
+    
+    init(_ node: LinkedList, _ data: Int) {
+        self.node = node
+        self.data = data
+    }
 }
