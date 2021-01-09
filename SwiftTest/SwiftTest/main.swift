@@ -17,35 +17,86 @@ import Foundation
 ///html/body/div[3]
 //#navMenu > ul > li:nth-child(1) > a
 
-struct Point: CustomStringConvertible {
-    var description: String = "(x, y)"
-    
-    var x: Int
-    var y: Int
-}
+//let queue = DispatchQueue(label: "serial")
+//
+//let task: (String, String) -> Void = { task, item in
+//    (1...3).forEach { index in
+//        print("\(task)", item, "Index: \(index)")
+//    }
+//}
+//
+//queue.async {
+//    // task1
+//    print("register 1")
+//    print("Serial 1", Thread.current)
+//    task("task 1", "🍕")
+//    task("task 1", "⚽️")
+//}
+//print(":---:")
+//
+//queue.async {
+//    // task2
+//    print("register 2")
+//    print("Serial 3", Thread.current)
+//    task("task 2", "🍕")
+//    task("task 2", "⚽️")
+//}
+//print(":---:")
+//
+//queue.async {
+//    // task3
+//    print("register 3")
+//    print("Serial 5", Thread.current)
+//    task("task 3", "🍕")
+//    task("task 3", "⚽️")
+//}
 
-let point = Point(x: 10, y: 20)
 
-print(point.description) // X, 직접 프로퍼티에 접근하지 마라.
-print(point)
+//DispatchQueue.global().async {
+//    for index in 1...10 {
+//        print(index)
+//    }
+//}
 
-struct Point2<T: CustomStringConvertible> {
-    var description: String = "포인트2"
-    var x: T
-    var y: T
-}
+//let queue = DispatchQueue(label: "MyQueue")
+//
+//DispatchQueue.global().async {
+//    print("Task1 Done")
+//}
+//print("Task1 queued")
 
-let point2 = Point2(x: 3, y: 4)
-print(point2)
-let e = Int(3)
-print(3.description)
+//queue.sync {
+//    print("Task2 Done")
+//}
+//print("Task2 queued")
 
-class LinkedList {
-    var node: LinkedList
-    var data: Int
-    
-    init(_ node: LinkedList, _ data: Int) {
-        self.node = node
-        self.data = data
+var a: Int?
+
+let group = DispatchGroup()
+
+// avoid deadlocks by not using .main queue here
+
+for index in 0...9 {
+    group.enter()
+    DispatchQueue.global().async {
+        a = 1
+        print("\(index) ee")
+        group.leave()
     }
+
+}
+// wait ...
+group.wait()
+
+//print(a) // you could also `return a` here
+
+
+//let group = DispatchGroup()
+//group.enter()
+//DispatchQueue.global().async() {
+//    print("ee")
+//    group.leave()
+//}
+group.notify(queue: DispatchQueue.global()) {
+    print("ee")
 }
