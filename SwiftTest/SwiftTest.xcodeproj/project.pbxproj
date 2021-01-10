@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41303100258F2FF000BB8F15 /* LeetCode125.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413030FF258F2FF000BB8F15 /* LeetCode125.swift */; };
-		414A57A7259F809900094373 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 414A57A6259F809900094373 /* SwiftSoup */; };
 		418BACD925810FE3002BD441 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BACD825810FE3002BD441 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +23,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		413030FF258F2FF000BB8F15 /* LeetCode125.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode125.swift; sourceTree = "<group>"; };
 		418BACD525810FE3002BD441 /* SwiftTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		418BACD825810FE3002BD441 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,7 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				414A57A7259F809900094373 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				418BACD825810FE3002BD441 /* main.swift */,
-				413030FF258F2FF000BB8F15 /* LeetCode125.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -84,7 +79,6 @@
 			);
 			name = SwiftTest;
 			packageProductDependencies = (
-				414A57A6259F809900094373 /* SwiftSoup */,
 			);
 			productName = SwiftTest;
 			productReference = 418BACD525810FE3002BD441 /* SwiftTest */;
@@ -114,7 +108,6 @@
 			);
 			mainGroup = 418BACCC25810FE3002BD441;
 			packageReferences = (
-				414A57A5259F809900094373 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 418BACD625810FE3002BD441 /* Products */;
 			projectDirPath = "";
@@ -131,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				418BACD925810FE3002BD441 /* main.swift in Sources */,
-				41303100258F2FF000BB8F15 /* LeetCode125.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +287,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		414A57A5259F809900094373 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		414A57A6259F809900094373 /* SwiftSoup */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 414A57A5259F809900094373 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
-			productName = SwiftSoup;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 418BACCD25810FE3002BD441 /* Project object */;
 }
