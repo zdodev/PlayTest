@@ -1,18 +1,42 @@
-var str1 = ""
-var str2 = "1"
+import Foundation
 
-let str3 = ""
-let str4 = "a"
-
-let a = MemoryLayout<String>.size
-print(a)
-
-struct St {
-    var a = 1
-    var b = 2
-    var c = 3
+class Job1: Operation {
+    override func main() {
+        for index in 1...5 {
+            print("\(index)...👻")
+        }
+    }
 }
 
-let b = St()
+class Job2: Operation {
+    override func main() {
+        for index in 1...5 {
+            print("\(index)...🔥")
+        }
+    }
+}
 
-print(MemoryLayout.size(ofValue: b))
+let a = OperationQueue()
+a.maxConcurrentOperationCount = 2
+
+a.addOperation {
+    for index in 1...5 {
+        print("\(index)...👻")
+    }
+}
+
+a.addOperation {
+    for index in 1...5 {
+        print("\(index)...🤬")
+    }
+}
+
+let job1 = Job1()
+let job2 = Job2()
+job2.addDependency(job1)
+a.qualityOfService = .background
+
+a.addOperation(job1)
+a.addOperation(job2)
+
+Thread.sleep(forTimeInterval: 10)
