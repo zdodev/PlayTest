@@ -34,3 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension UIApplicationDelegate {
+//    public static func main()
+}
