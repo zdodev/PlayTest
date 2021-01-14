@@ -7,17 +7,30 @@
 
 import UIKit
 
-@main
+//UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, nil)
+
+//@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    static func main() {
+        print("메롱이지롱")
+        print(NSStringFromClass(AppDelegate.self))
+        UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(AppDelegate.self))
+    }
+//    static func main() {}
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("will")
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print("did")
         return true
     }
 
     // MARK: UISceneSession Lifecycle
+    
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
@@ -32,9 +45,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
-
-
-extension UIApplicationDelegate {
-//    public static func main()
 }

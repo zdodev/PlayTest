@@ -17,6 +17,7 @@ class ViewController: UIViewController {
                 view1.backgroundColor = .black
                 self.view.addSubview(view1)
             }
+//            print("ee")
         }
     }
 }
