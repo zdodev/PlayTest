@@ -19,6 +19,8 @@ class ViewController: UIViewController {
             }
 //            print("ee")
         }
+        
+        let button = UIButton.ButtonType.system
     }
 }
 

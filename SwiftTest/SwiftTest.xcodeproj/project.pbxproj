@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41034E1025B0776F002A7AFE /* hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41034E0F25B0776F002A7AFE /* hello.swift */; };
 		41034E1625B07811002A7AFE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41034E1525B07811002A7AFE /* main.swift */; };
 		41F8E11025AB3EE600702B23 /* myTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8E10F25AB3EE600702B23 /* myTests.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		41034E0F25B0776F002A7AFE /* hello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello.swift; sourceTree = "<group>"; };
 		41034E1525B07811002A7AFE /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		418BACD525810FE3002BD441 /* SwiftTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F8E10D25AB3EE600702B23 /* myTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				41034E1525B07811002A7AFE /* main.swift */,
-				41034E0F25B0776F002A7AFE /* hello.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -180,7 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41034E1625B07811002A7AFE /* main.swift in Sources */,
-				41034E1025B0776F002A7AFE /* hello.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
