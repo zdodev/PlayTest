@@ -1,96 +1,63 @@
-//
-//  ViewController.swift
-//  iOSTest
-//
-//  Created by Zero DotOne on 2021/01/26.
-//
-
 import UIKit
 
-typealias Parameters = [String: String]
-
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        var request = URLRequest(url: <#T##URL#>)
-    }
-
+//    let boundary = "\(UUID().uuidString)"
+    let boundary = "64800cc55bc54c3cbfa850a76569f9d4"
+    
     @IBAction func get(_ sender: UIButton) {
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
+        guard let url = URL(string: "https://camp-open-market.herokuapp.com/item") else {
+            return
+        }
         var request = URLRequest(url: url)
-        
-        let boundary = generateBoundary()
-        
+        request.httpMethod = "POST"
+//        let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        
-        let dataBody = createDataBody(withParameters: nil, media: nil, boundary: boundary)
-        request.httpBody = dataBody
+        request.httpBody = createDataBody(withParameters: "ee")
         
         let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
-            
+        session.dataTask(with: request) { data, response, error in
             if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
-                }
+                print(data)
+                let decode = try! JSONDecoder().decode(Model.self, from: data)
+                print(decode)
             }
         }.resume()
     }
     
-    func generateBoundary() -> String {
-        return "Boundary-\(NSUUID().uuidString)"
+    func createDataBody(withParameters params: String) -> Data {
+        var body = Data()
+        body.append(makeParameter(parameter: "title", value: "test1"))
+        body.append(makeParameter(parameter: "descriptions", value: "test1"))
+        body.append(makeParameter(parameter: "price", value: "1234"))
+        body.append(makeParameter(parameter: "currency", value: "USD"))
+        body.append(makeParameter(parameter: "stock", value: "5000"))
+        body.append(makeParameter(parameter: "password", value: "1234"))
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        return body
     }
     
-    func createDataBody(withParameters params: Parameters?, media: [Media]?, boundary: String) -> Data {
-        
-        let lineBreak = "\r\n"
+    func makeParameter(parameter: String, value: String) -> Data {
         var body = Data()
         
-//        if let parameters = params {
-//            for (key, value) in parameters {
-//                body.append("--\(boundary + lineBreak)".data(using: .utf8))
-//                body.append("Content-Disposition: form-data; name=\"\(key)\"\(lineBreak + lineBreak)")
-//                body.append("\(value + lineBreak)")
-//            }
-//        }
-        
-//        if let media = media {
-//            for photo in media {
-//                body.append("--\(boundary + lineBreak)")
-//                body.append("Content-Disposition: form-data; name=\"\(photo.key)\"; filename=\"\(photo.filename)\"\(lineBreak)")
-//                body.append("Content-Type: \(photo.mimeType + lineBreak + lineBreak)")
-//                body.append(photo.data)
-//                body.append(lineBreak)
-//            }
-//        }
-        
-//        body.append("--\(boundary)--\(lineBreak)")
-        
+        let first = "--\(boundary)\r\n".data(using: .utf8)!
+        let stringData = "Content-Disposition: form-data; name=\"\(parameter)\"\r\n\r\n".data(using: .utf8)!
+        let data = value.data(using: .utf8)!
+        let lineBreak = "\r\n".data(using: .utf8)!
+        body.append(first)
+        body.append(stringData)
+        body.append(data)
+        body.append(lineBreak)
         return body
     }
 }
 
-struct Media {
-    let key: String
-    let filename: String
-    let data: Data
-    let mimeType: String
-    
-    init?(withImage image: UIImage, forKey key: String) {
-        self.key = key
-        self.mimeType = "image/jpeg"
-        self.filename = "kyleleeheadiconimage234567.jpg"
-        
-        guard let data = image.jpegData(compressionQuality: 0.7) else { return nil }
-        self.data = data
-    }
-    
+struct Model: Decodable {
+    let id: Int
+    let title: String
+    let descriptions: String
+    let price: Int
+    let currency: String
+    let thumbnails: [String]
+    let images: [String]
 }
