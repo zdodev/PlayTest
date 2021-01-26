@@ -20,7 +20,7 @@ struct Request {
         }
         task.resume()
     }
-    
+
     func requestItem(requestURL: String) {
         guard let url = URL(string: requestURL) else {
             return
@@ -58,7 +58,7 @@ struct Item: Decodable {
     let registrationDate: Double
     let descriptions: String?
     let images: [String]?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case title
@@ -72,9 +72,8 @@ struct Item: Decodable {
         case images
     }
 }
-
-let request = Request()
+//
+//let request = Request()
 //request.requestItemList(requestURL: "https://camp-open-market.herokuapp.com/items/1")
-request.requestItem(requestURL: "https://camp-open-market.herokuapp.com/item/30")
-
-Thread.sleep(forTimeInterval: 5)
+//request.requestItem(requestURL: "https://camp-open-market.herokuapp.com/item/30")
+//
