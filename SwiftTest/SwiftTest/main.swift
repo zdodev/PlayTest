@@ -1,35 +1,43 @@
-protocol Judge {
-    mutating func requireWitnessAttendance(witness: Witness)
-    func demandTestimony()
-}
 
-protocol Witness {
-    func testify()
-}
-
-struct King: Judge {
-    private var witness: Witness?
+// 버튼 재사용성의 문제
+class Button {
+    private let dialer: Dialer
     
-    mutating func requireWitnessAttendance(witness: Witness) {
-        self.witness = witness
+    init(dialer: Dialer) {
+        self.dialer = dialer
+    }
+}
+
+class Dialer {
+    
+}
+
+class Button1 {
+    let token: Int = {
+        Int.random(in: 1...10)
+    }()
+    let buttonListener: ButtonListener
+    
+    init(buttonListener: ButtonListener) {
+        self.buttonListener = buttonListener
     }
     
-    func demandTestimony() {
-        guard let witness = witness else {
-            return
-        }
-        
-        witness.testify()
+    func press() {
+        buttonListener.buttonPressed(token: token)
     }
 }
 
-struct Rabbit: Witness {
-    func testify() {
-        print("I am innocent.")
+protocol ButtonListener {
+    func buttonPressed(token: Int)
+}
+
+class Dialer1: ButtonListener {
+    func buttonPressed(token: Int) {
+        print("이잉, \(token)")
     }
 }
 
-var king = King()
-let rabbit = Rabbit()
-king.requireWitnessAttendance(witness: rabbit)
-king.demandTestimony()
+let dialer = Dialer1()
+
+let button = Button1(buttonListener: dialer)
+button.press()
