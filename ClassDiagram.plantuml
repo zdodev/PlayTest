@@ -26,3 +26,44 @@ enum enum
 interface interface
 
 @enduml
+
+## Relations between classes
+
+- <, >, |
+- *
+- o
+- #
+- x
+- }, {
+- +
+- ^
+- --
+- ..
+
+- -->, Association 
+- --|>, --^, Inheritance
+- ..|>, Implementation, Realization
+- ..>, Dependency
+- --o, Aggregation
+- --*, Composition
+
+@startuml
+
+Class01 --> Class02 : Association
+Class03 --|> Class04 : Inheritance
+Class05 ..|> Class06 : Implementation
+Class07 ..> Class08 : Dependency
+Class09 --o Class10 : Aggregation
+Class11 --* Class12 : Composition
+
+@enduml
+
+@startuml
+
+Class13 --# Class14
+Class15 --x Class16
+Class17 --{ Class18
+Class19 --+ Class20
+Class21 --^ Class22
+
+@enduml
