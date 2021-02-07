@@ -108,3 +108,26 @@ class Obj {
 }
 
 @enduml
+
+## Defining visibility
+
+- -, private 
+- #, protected 
+- ~, package private, default
+- +, public
+
+@startuml
+
+class Dummy {
+    -field1
+    #field2
+    ~field3
+    +field4
+
+    -void method1()
+    #void method2()
+    ~void method3()
+    +void method4()
+}
+
+@enduml
