@@ -1,34 +1,24 @@
-import Foundation
+print("ee")
 
-enum NetworkError: Error {
-    case badURL
-}
-
-
-func fetchUnreadCount(from urlString: String, completionHandler: @escaping (Result<Int, NetworkError>) -> Void) {
-    guard let url = URL(string: urlString) else {
-        completionHandler(.failure(.badURL))
-        return
-    }
+func test() {
     
-    print("Fetching \(url.absoluteString)")
-    completionHandler(.success(5))
 }
 
-fetchUnreadCount(from: "https://hackingwithswift.com") { result in
-    switch result {
-    case .success(let count):
-        print("\(count) unread messages.")
-    case .failure(let error):
-        print(error.localizedDescription)
-    }
+let a = { coin -> Int  in
+    print(coin)
+    return 3
+}("a3")
+
+let b = test()
+print(a)
+print(b)
+
+func test2() -> Int {
+    8
 }
 
-fetchUnreadCount(from: "https://hackingwithswift.com") { result in
-    switch result {
-    case .success(let count):
-        print("\(count) unread messages.")
-    case .failure(let error):
-        print(error.localizedDescription)
-    }
+struct Target {
+    let a = test2()
 }
+
+print(Target().a)
