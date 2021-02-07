@@ -67,3 +67,16 @@ Class19 --+ Class20
 Class21 --^ Class22
 
 @enduml
+
+## Label on relations
+
+- "1", "a"
+- : relation
+
+@startuml
+
+Class01 "1" *-- "many" Class02 : contains
+Class03 o-- Class04 : aggregation
+Class05 --> "1" Class06
+
+@enduml
