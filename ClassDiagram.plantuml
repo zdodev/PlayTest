@@ -80,3 +80,31 @@ Class03 o-- Class04 : aggregation
 Class05 --> "1" Class06
 
 @enduml
+
+## Adding methods
+
+@startuml
+
+Object ^-- ArrayList
+
+Object : equals()
+
+ArrayList : Object[] elementData
+ArrayList : size()
+
+class Dummy {
+    String data
+    void methods()
+}
+
+class Flight {
+    flightNumber : Integer
+    departureTime : Date
+}
+
+class Obj {
+    {field} A field
+    {method} void methods()
+}
+
+@enduml
