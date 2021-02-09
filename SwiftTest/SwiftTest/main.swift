@@ -26,4 +26,4 @@ DispatchQueue.global().async {
 }
 
 Thread.sleep(forTimeInterval: 1)
-Thread.sleep(forTimeInterval: 20)
+Thread.sleep(forTimeInterval: 2)
