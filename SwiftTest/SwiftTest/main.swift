@@ -1,29 +1,26 @@
-import Foundation
-
-func measureTime(_ processBlock: () -> Void) {
-    let startTime = Date()
-    processBlock()
-    let intervalTime = Date().timeIntervalSince(startTime)
-    print("running time: \(intervalTime)")
+let array = [1, 2, 3, 4, 5]
+let multiplication = array.map {
+    $0 + 1
 }
+print(multiplication)
 
-DispatchQueue.global().async {
-    measureTime {
-        var a = 0.1
-        for _ in 1...50000000 {
-            a *= 0.1
-        }
-    }
+let array1 = [1, nil, 3, nil, 5, 6, 7]
+let flatMapResult = array1.flatMap {
+    $0
 }
-
-DispatchQueue.global().async {
-    measureTime {
-        var a = 0
-        for _ in 1...50000000 {
-            a += 1
-        }
-    }
+let compactMapResult = array1.compactMap {
+    $0
 }
+print(flatMapResult)
+print(compactMapResult)
 
-Thread.sleep(forTimeInterval: 1)
-Thread.sleep(forTimeInterval: 2)
+let array2 = [[1, 2, 3], [nil, 5], [6, nil], [nil, nil]]
+let flatMapResult2 = array2.flatMap {
+    [1] + $0
+}
+let compactMapResult2 = array2.compactMap {
+//    print($0)
+    return $0
+}
+//print(flatMapResult2)
+//print(compactMapResult2)
