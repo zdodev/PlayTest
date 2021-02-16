@@ -1,31 +1,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let activityIndicator: UIActivityIndicatorView = {
-        UIActivityIndicatorView(style: .large)
-    }()
-    
-    let uiView = {
-        UIView()
+    let button: UIButton = {
+        let button = UIButton(type: .system)
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        view.addSubview(activityIndicator)
-//        activityIndicator.frame = CGRect(x: 50, y: 50, width: 20, height: 20)
-//        view.addSubview(uiView)
+        view.addSubview(button)
+        navigationItem.title = "메모"
     }
     
     override func viewDidLayoutSubviews() {
-//        uiView.frame = CGRect(x: , y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-        uiView.frame = view.bounds
-        uiView.backgroundColor = .systemRed
-        let window = UIApplication.shared.windows[0]
-//        print(window.safeAreaInsets.)
-//        let uiedge = UIEdgeInsets()
-        print(uiView.frame)
-        print(uiView.bounds)
+        print(view.frame)
+        print(view.bounds)
+        print(view.layoutMargins)
+        button.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+        button.setTitle("Button", for: .normal)
+        button.addTarget(self, action: #selector(printViewMode), for: .touchUpInside)
+    }
+    
+    @objc func printViewMode() {
+        print(traitCollection.horizontalSizeClass.rawValue)
+        print(traitCollection.verticalSizeClass.rawValue)
     }
 }
 

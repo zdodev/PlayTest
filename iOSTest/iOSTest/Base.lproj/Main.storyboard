@@ -15,89 +15,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-SX-XXb">
-                                <rect key="frame" x="87" y="97" width="240" height="128"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-x4-oTy">
-                                        <rect key="frame" x="8" y="8" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="sssssssssssssssssssssssssssssssss" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPT-o6-0aa">
-                                        <rect key="frame" x="8" y="47" width="224" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="zPT-o6-0aa" secondAttribute="trailing" constant="8" id="CUG-1b-c3p"/>
-                                    <constraint firstAttribute="height" constant="128" id="LRg-3m-q3r"/>
-                                    <constraint firstItem="zPT-o6-0aa" firstAttribute="leading" secondItem="jFI-SX-XXb" secondAttribute="leading" constant="8" id="gc1-73-w6i"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="jFI-SX-XXb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="K9B-dC-JQK"/>
-                            <constraint firstItem="jFI-SX-XXb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="NAF-8Y-KjZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jFI-SX-XXb" secondAttribute="trailing" constant="87" id="y4e-Cc-QLS"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gfg-Yw-oko"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="116"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="cKY-cQ-bcQ">
-            <objects>
-                <viewController id="jm3-5u-dBp" customClass="ViewController" customModule="iOSTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PLn-Dv-ue7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJV-a0-A6b">
-                                <rect key="frame" x="104" y="64" width="260" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTg-MX-Hfz">
-                                <rect key="frame" x="186.5" y="283" width="41.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="X7e-a2-gZJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="gJV-a0-A6b" firstAttribute="top" secondItem="X7e-a2-gZJ" secondAttribute="top" constant="20" id="7QX-kc-497"/>
-                            <constraint firstItem="gJV-a0-A6b" firstAttribute="leading" secondItem="X7e-a2-gZJ" secondAttribute="leading" constant="104" id="7Zw-bM-vsO"/>
-                            <constraint firstItem="cTg-MX-Hfz" firstAttribute="top" secondItem="gJV-a0-A6b" secondAttribute="bottom" constant="178" id="9U7-aH-nXl"/>
-                            <constraint firstItem="cTg-MX-Hfz" firstAttribute="centerX" secondItem="PLn-Dv-ue7" secondAttribute="centerX" id="Y8V-2Z-7NK"/>
-                            <constraint firstAttribute="trailing" secondItem="gJV-a0-A6b" secondAttribute="trailing" constant="50" id="bpT-vZ-0Yy"/>
-                            <constraint firstItem="X7e-a2-gZJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cTg-MX-Hfz" secondAttribute="trailing" constant="50" id="fau-DU-80G"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WmZ-Hg-as7" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="805.79710144927537" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
