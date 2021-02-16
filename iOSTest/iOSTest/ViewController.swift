@@ -6,19 +6,22 @@ class ViewController: UIViewController {
         return button
     }()
     
+    let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        return searchBar
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(button)
+        view.addSubview(searchBar)
         navigationItem.title = "메모"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
     }
     
     override func viewDidLayoutSubviews() {
-        print(view.frame)
-        print(view.bounds)
-        print(view.layoutMargins)
-        button.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
-        button.setTitle("Button", for: .normal)
-        button.addTarget(self, action: #selector(printViewMode), for: .touchUpInside)
+        searchBar.frame = CGRect(x: 0, y: view.layoutMargins.top, width: view.frame.width, height: 50)
+        searchBar.placeholder = "Search"
     }
     
     @objc func printViewMode() {
