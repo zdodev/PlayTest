@@ -21,12 +21,19 @@ final class ViewController: UIViewController {
         return textView
     }()
     
+    let data = ["while", "black", "red", "cyan"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(button)
         view.addSubview(searchBar)
         view.addSubview(tableView)
         view.addSubview(textView)
+        
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         navigationItem.title = "메모"
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
     }
@@ -37,13 +44,12 @@ final class ViewController: UIViewController {
             displayListView()
         case .regular:
             displayMemoView()
-        case .unspecified: // ?
+        case .unspecified:
             print("unspecified.")
         @unknown default:
             fatalError()
         }
-        print(view.safeAreaInsets)
-        print(view.layoutMargins)
+        tableView.reloadData()
     }
     
     private func displayListView() {
@@ -60,3 +66,22 @@ final class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        data.count
+        20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+//        cell.textLabel?.text = data[indexPath.row]
+        print(indexPath)
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        55
+    }
+}
