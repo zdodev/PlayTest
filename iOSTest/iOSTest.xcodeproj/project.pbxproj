@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4132BA0A25DD632C002FB538 /* MemoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4132BA0925DD632C002FB538 /* MemoItem.swift */; };
 		41C7F66A25DC04960025D9DD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7F66925DC04960025D9DD /* TableViewController.swift */; };
 		41C7F66D25DC12110025D9DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7F66C25DC12110025D9DD /* TableViewCell.swift */; };
 		41C7F67025DC1D280025D9DD /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7F66F25DC1D280025D9DD /* MyTableViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4132BA0925DD632C002FB538 /* MemoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoItem.swift; sourceTree = "<group>"; };
 		41C7F66925DC04960025D9DD /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		41C7F66C25DC12110025D9DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		41C7F66F25DC1D280025D9DD /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				41FA45BB25D69E5C0038D39F /* AppDelegate.swift */,
 				41FA45BD25D69E5C0038D39F /* SceneDelegate.swift */,
 				41FA45BF25D69E5C0038D39F /* ViewController.swift */,
+				4132BA0925DD632C002FB538 /* MemoItem.swift */,
 				41C7F66C25DC12110025D9DD /* TableViewCell.swift */,
 				41C7F66925DC04960025D9DD /* TableViewController.swift */,
 				41FA45C125D69E5C0038D39F /* Main.storyboard */,
@@ -151,6 +154,7 @@
 				41FA45C025D69E5C0038D39F /* ViewController.swift in Sources */,
 				41FA45BC25D69E5C0038D39F /* AppDelegate.swift in Sources */,
 				41FA45BE25D69E5C0038D39F /* SceneDelegate.swift in Sources */,
+				4132BA0A25DD632C002FB538 /* MemoItem.swift in Sources */,
 				41C7F66A25DC04960025D9DD /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

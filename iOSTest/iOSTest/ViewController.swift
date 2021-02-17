@@ -21,7 +21,7 @@ final class ViewController: UIViewController {
         return textView
     }()
     
-    let data = ["while", "black", "red", "cyan"]
+    var memoData = [MemoItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,16 @@ final class ViewController: UIViewController {
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        guard let dataAsset = NSDataAsset(name: "sample") else {
+            return
+        }
+        
+        do {
+            memoData = try JSONDecoder().decode([MemoItem].self, from: dataAsset.data)
+        } catch {
+            print(error.localizedDescription)
+        }
         
         navigationItem.title = "메모"
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
@@ -54,13 +64,13 @@ final class ViewController: UIViewController {
     
     private func displayListView() {
         searchBar.frame = CGRect(x: 0, y: view.layoutMargins.top, width: view.frame.width, height: 50)
-        tableView.frame = CGRect(x: 0, y: searchBar.frame.origin.y + searchBar.frame.height, width: view.frame.width, height: view.frame.height - searchBar.frame.origin.y + searchBar.frame.height)
+        tableView.frame = CGRect(x: 0, y: searchBar.frame.origin.y + searchBar.frame.height, width: view.frame.width, height: view.frame.height - searchBar.frame.origin.y - searchBar.frame.height)
         textView.isHidden = true
     }
     
     private func displayMemoView() {
         searchBar.frame = CGRect(x: 0, y: view.layoutMargins.top, width: view.frame.width / 3, height: 50)
-        tableView.frame = CGRect(x: 0, y: searchBar.frame.origin.y + searchBar.frame.height, width: view.frame.width / 3, height: view.frame.height - searchBar.frame.origin.y + searchBar.frame.height)
+        tableView.frame = CGRect(x: 0, y: searchBar.frame.origin.y + searchBar.frame.height, width: view.frame.width, height: view.frame.height - searchBar.frame.origin.y - searchBar.frame.height)
         textView.frame = CGRect(x: view.frame.width / 3, y: view.layoutMargins.top, width: view.frame.width - view.frame.width / 3, height: view.frame.height - searchBar.frame.origin.y + searchBar.frame.height)
         textView.isHidden = false
     }
@@ -68,14 +78,13 @@ final class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        data.count
-        20
+        memoData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-//        cell.textLabel?.text = data[indexPath.row]
-        print(indexPath)
+        cell.configure(with: memoData[indexPath.row])
+        textView.text = memoData[indexPath.row].body
         return cell
     }
 }
@@ -83,5 +92,9 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         55
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        textView.text = memoData[indexPath.row].body
     }
 }
