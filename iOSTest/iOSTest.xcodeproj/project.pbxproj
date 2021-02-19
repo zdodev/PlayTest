@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4118A1B525DE0C0500FE424A /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4118A1B425DE0C0500FE424A /* MemoViewController.swift */; };
 		4132BA0A25DD632C002FB538 /* MemoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4132BA0925DD632C002FB538 /* MemoItem.swift */; };
 		41C7F66A25DC04960025D9DD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7F66925DC04960025D9DD /* TableViewController.swift */; };
 		41C7F66D25DC12110025D9DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7F66C25DC12110025D9DD /* TableViewCell.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4118A1B425DE0C0500FE424A /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		4132BA0925DD632C002FB538 /* MemoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoItem.swift; sourceTree = "<group>"; };
 		41C7F66925DC04960025D9DD /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		41C7F66C25DC12110025D9DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				41FA45BB25D69E5C0038D39F /* AppDelegate.swift */,
 				41FA45BD25D69E5C0038D39F /* SceneDelegate.swift */,
 				41FA45BF25D69E5C0038D39F /* ViewController.swift */,
+				4118A1B425DE0C0500FE424A /* MemoViewController.swift */,
 				4132BA0925DD632C002FB538 /* MemoItem.swift */,
 				41C7F66C25DC12110025D9DD /* TableViewCell.swift */,
 				41C7F66925DC04960025D9DD /* TableViewController.swift */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4118A1B525DE0C0500FE424A /* MemoViewController.swift in Sources */,
 				41C7F66D25DC12110025D9DD /* TableViewCell.swift in Sources */,
 				41C7F67025DC1D280025D9DD /* MyTableViewController.swift in Sources */,
 				41FA45C025D69E5C0038D39F /* ViewController.swift in Sources */,
@@ -303,6 +307,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZH8K7PDP5;
 				INFOPLIST_FILE = iOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,6 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZH8K7PDP5;
 				INFOPLIST_FILE = iOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -18,6 +18,7 @@ final class ViewController: UIViewController {
     
     private let textView: UITextView = {
         let textView = UITextView()
+        textView.dataDetectorTypes = .all
         return textView
     }()
     
@@ -37,10 +38,6 @@ final class ViewController: UIViewController {
         guard let dataAsset = NSDataAsset(name: "sample") else {
             return
         }
-//        /Users/zdo/Documents/test/iOSTest/iOSTest/Assets.xcassets
-        let fileManager = FileManager.default
-        let rootPath = URL(string: #file)
-        print(rootPath)
     
         do {
             memoData = try JSONDecoder().decode([MemoItem].self, from: dataAsset.data)
@@ -50,6 +47,8 @@ final class ViewController: UIViewController {
         
         navigationItem.title = "메모"
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationController?.navigationBar.backgroundColor = .blue
+//        navigationController?.view.
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,7 +87,6 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         cell.configure(with: memoData[indexPath.row])
-        textView.text = memoData[indexPath.row].body
         return cell
     }
 }
@@ -99,17 +97,14 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        textView.text = memoData[indexPath.row].body
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        do {
-//            let modifiedData = try JSONEncoder().encode(memoData)
-//            let url = URL()
-//            modifiedData.write(to: <#T##URL#>)
-//            enco([MemoItem].self, from: dataAsset.data)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
+        if traitCollection.horizontalSizeClass == .compact {
+            let memoViewController = MemoViewController()
+            memoViewController.textView.text = memoData[indexPath.row].body
+            navigationController?.pushViewController(memoViewController, animated: true)
+        } else if traitCollection.horizontalSizeClass == .regular {
+            textView.text = memoData[indexPath.row].body
+            textView.resignFirstResponder()
+            searchBar.resignFirstResponder()
+        }
     }
 }

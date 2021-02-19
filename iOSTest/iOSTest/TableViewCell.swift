@@ -50,7 +50,7 @@ class TableViewCell: UITableViewCell {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.locale = Locale.autoupdatingCurrent
         let dateTime = Date(timeIntervalSince1970: TimeInterval(model.lastModified))
         dateTextLabel.text = dateFormatter.string(from: dateTime)
         
