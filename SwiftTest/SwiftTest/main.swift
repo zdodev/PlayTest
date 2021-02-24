@@ -1,3 +1,4 @@
-let s = "1 2 3"
-let c = Set(s)
-print(c)
+import Foundation
+
+let currentTime = Date().timeIntervalSince1970
+print(currentTime)

@@ -10,3 +10,9 @@ text.split(separator: "\u{2028}")
 
 
 
+### 현재 시간 가져오기
+
+```swift
+let currentTime = Date().timeIntervalSince1970
+```
+
