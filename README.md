@@ -16,3 +16,13 @@ text.split(separator: "\u{2028}")
 let currentTime = Date().timeIntervalSince1970
 ```
 
+
+
+### 메모리 주소 출력하기
+
+```swift
+withUnsafePointer(to: a) {
+    print("value \(a) has address \($0)")
+}
+```
+
