@@ -2,12 +2,6 @@
 
 ---
 
-### 02.26 UINavigationItem custom leftBarButtonItem 추가하면서 기존의 back button 형식 유지하기
-
-```swift
-navigationItem.leftItemsSupplementBackButton = true
-```
-
 
 
 ### 02.25 UITextView 에서 개행별로 문자열 추출하기.
