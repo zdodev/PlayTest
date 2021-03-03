@@ -1,25 +1,13 @@
 import Foundation
 
-struct AAA {
-    var name: String
-    
-//    mutating func chnageName(_ name: String) {
-//        self.name = name
-//    }
+let text = "aa\nbb\ncc\ndd"
+var separated = text.components(separatedBy: "\n")
+//var separated = text.split(separator: "\n")
+separated.removeFirst()
+let c = separated.reduce("") {
+    if $0 == "" {
+        return String($1)
+    }
+    return $0 + "\n" + $1
 }
-
-var aaa = AAA(name: "abc")
-
-withUnsafePointer(to: aaa) {
-    print($0)
-}
-
-withUnsafePointer(to: aaa) {
-    print($0)
-}
-
-withUnsafePointer(to: aaa) {
-    print($0)
-}
-
-let a = "abc" - "bcd"
+print(c)
