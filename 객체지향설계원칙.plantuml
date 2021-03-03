@@ -1,0 +1,183 @@
+# Class Diagram
+
+## Declaring element
+
+- abstract
+- annotation
+- (), circle
+- class
+- <>, diamond
+- entity
+- enum
+- interface
+
+@startuml
+
+abstract abstract
+abstract class "abstract class"
+annotation annotation
+circle circle
+() circle_short_form
+class class
+diamond diamond
+<> diamond_short_form
+entity entity
+enum enum
+interface interface
+
+@enduml
+
+## Relations between classes
+
+- <, >, |
+- *
+- o
+- #
+- x
+- }, {
+- +
+- ^
+- --
+- ..
+
+- -->, Association 
+- --|>, --^, Inheritance
+- ..|>, Implementation, Realization
+- ..>, Dependency
+- --o, Aggregation
+- --*, Composition
+
+@startuml
+
+Class01 --> Class02 : Association
+Class03 --|> Class04 : Inheritance
+Class05 ..|> Class06 : Implementation
+Class07 ..> Class08 : Dependency
+Class09 --o Class10 : Aggregation
+Class11 --* Class12 : Composition
+
+@enduml
+
+@startuml
+
+Class13 --# Class14
+Class15 --x Class16
+Class17 --{ Class18
+Class19 --+ Class20
+Class21 --^ Class22
+
+@enduml
+
+## Label on relations
+
+- "1", "a"
+- : relation
+
+@startuml
+
+Class01 "1" *-- "many" Class02 : contains
+Class03 o-- Class04 : aggregation
+Class05 --> "1" Class06
+
+@enduml
+
+## Adding methods
+
+@startuml
+
+Object ^-- ArrayList
+
+Object : equals()
+
+ArrayList : Object[] elementData
+ArrayList : size()
+
+class Dummy {
+    String data
+    void methods()
+}
+
+class Flight {
+    flightNumber : Integer
+    departureTime : Date
+}
+
+class Obj {
+    {field} A field
+    {method} void methods()
+}
+
+@enduml
+
+## Defining visibility
+
+- -, private 
+- #, protected 
+- ~, package private, default
+- +, public
+
+@startuml
+
+class Dummy {
+    -field1
+    #field2
+    ~field3
+    +field4
+
+    -void method1()
+    #void method2()
+    ~void method3()
+    +void method4()
+}
+
+@enduml
+
+## SRP
+
+@startuml
+
+class Employee {
+    calculatePay()
+    calculateTaxes()
+    writeToDisk()
+    readFromDisk()
+    createXML()
+    parseXML()
+    displayOnEmployeeReport()
+    displayOnPayrollReport()
+    displayOnTaxReport()
+}
+
+@enduml
+
+@startuml
+
+class Employee {
+    calculatePay()
+    calculateTaxes()
+}
+
+class EmployeeXMLConverter {
+    EmployteeToXML()
+    XMLToExployee()
+}
+
+class EmployeeDatabase {
+    writeEmployee()
+    readEmployee()
+}
+
+class PayrollReport 
+
+class EmployeeReport
+
+class TaxReport
+
+TaxReport --> Employee
+EmployeeReport --> Employee
+PayrollReport --> Employee
+EmployeeDatabase --> Employee
+EmployeeXMLConverter --> Employee
+
+@enduml
+
