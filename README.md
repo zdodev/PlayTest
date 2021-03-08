@@ -2,9 +2,22 @@
 
 ---
 
+### 현재 시간 출력하기.
+
+```swift
+let since1970 = Date().timeIntervalSince1970
+print(since1970)
+// 1615219234.8159971
+
+let sinceReferenceDate = Date().timeIntervalSinceReferenceDate
+print(sinceReferenceDate)
+// 636912034.816389
+
+```
 
 
-### 02.25 UITextView 에서 개행별로 문자열 추출하기.
+
+### UITextView 에서 개행별로 문자열 추출하기.
 
 ```swift
 text.split(separator: "\u{2028}")

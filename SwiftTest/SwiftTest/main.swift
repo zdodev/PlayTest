@@ -1,12 +1,7 @@
 import Foundation
 
-let a = true
+let since1970 = Date().timeIntervalSince1970
+print(since1970)
 
-func test() {
-    guard a else {
-        return
-    }
-    print("통과")
-}
-
-test()
+let sinceReferenceDate = Date().timeIntervalSinceReferenceDate
+print(sinceReferenceDate)
