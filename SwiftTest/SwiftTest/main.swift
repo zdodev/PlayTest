@@ -1,7 +1,19 @@
-import Foundation
+func task1(_ doing: ((Int, Int), Int) -> Int) -> Int {
+    doing((1, 2), 3)
+}
 
-let since1970 = Date().timeIntervalSince1970
-print(since1970)
+let result1 = task1 { (a, b) -> Int in
+    a.0 + a.1 + b
+}
 
-let sinceReferenceDate = Date().timeIntervalSinceReferenceDate
-print(sinceReferenceDate)
+print(result1)
+
+func task2(_ doing: ((Int, Int), Int) -> Int) -> Int {
+    doing((1, 2), 3)
+}
+
+let result2 = task2 { a, b -> Int in
+    a.0 + a.1 + b
+}
+
+print(result2)
