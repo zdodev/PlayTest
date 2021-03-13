@@ -1,10 +1,15 @@
 import UIKit
 
 final class ViewController: UIViewController {
+    @IBOutlet weak var button: UIButton!
+    
+    override func loadView() {
+        super.loadView()
+        print(button)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("cumstom back button.")
-        navigationItem.leftItemsSupplementBackButton = true
+        print("까궁")
     }
 }

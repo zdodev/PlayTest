@@ -17,3 +17,16 @@ let result2 = task2 { a, b -> Int in
 }
 
 print(result2)
+
+let group1 = [1, 2, 3]
+let group2 = [1, 3, 4]
+
+print(group1)
+print(group2)
+
+var dic: [Int?: String] = [:]
+dic[nil] = "nil"
+dic[1] = "1"
+
+print(dic[nil])
+print(dic[1])
