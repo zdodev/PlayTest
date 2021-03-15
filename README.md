@@ -1,6 +1,26 @@
-# iOS test
+# iOS & Swift test
 
 ---
+
+### 클로저 중간에 종료하기
+
+클로저 실행 중간에 특정 조건을 만족하면 종료하도록 하고 싶었는데 `return` 문으로는 종료가 되지 않는다.
+
+```swift
+let array = [1, 3, 5, 7, 9]
+let mapResult = array.map { element -> Int in
+    if element == 3 {
+        // 안되네
+//        return
+    }
+    return element
+}
+print(mapResult)
+```
+
+
+
+
 
 ### 클로저에서 튜플을 파라미터로 선언하고 사용하기
 
