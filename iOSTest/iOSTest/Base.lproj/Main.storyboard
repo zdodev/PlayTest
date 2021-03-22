@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p82-6M-0dv">
-                                <rect key="frame" x="195" y="233" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzk-Ak-2fr">
+                                <rect key="frame" x="191" y="181" width="103" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
@@ -27,7 +27,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jAr-hY-eAU"/>
                     <connections>
-                        <outlet property="button" destination="p82-6M-0dv" id="8d5-Pf-JqA"/>
+                        <outlet property="btn" destination="nzk-Ak-2fr" id="bnw-3z-w5M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aq5-4G-P12" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

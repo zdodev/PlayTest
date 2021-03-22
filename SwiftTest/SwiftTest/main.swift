@@ -1,9 +1,9 @@
-let array = [1, 3, 5, 7, 9]
-let mapResult = array.map { element -> Int in
-    if element == 3 {
-        // 안되네
-//        return
-    }
-    return element
-}
-print(mapResult)
+import Foundation
+
+let date = Date()
+let s = date.description
+
+let dateFormatter = DateFormatter()
+let date1 = dateFormatter.date(from: s)
+let date2 = dateFormatter.string(from: date)
+

@@ -1,15 +1,14 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    @IBOutlet weak var button: UIButton!
-    
-    override func loadView() {
-        super.loadView()
-        print(button)
-    }
+    @IBOutlet weak var btn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("까궁")
+        
+        btn.backgroundColor = UIColor.darkGray
+        btn.layer.cornerRadius = 25
+        btn.tintColor = UIColor.white
+        btn.titleLabel?.textColor = UIColor.white
     }
 }
