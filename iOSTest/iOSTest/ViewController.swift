@@ -1,14 +1,18 @@
 import UIKit
+import Network
 
 final class ViewController: UIViewController {
     @IBOutlet weak var btn: UIButton!
+    let monitor = NWPathMonitor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btn.backgroundColor = UIColor.darkGray
-        btn.layer.cornerRadius = 25
-        btn.tintColor = UIColor.white
-        btn.titleLabel?.textColor = UIColor.white
+        monitor.pathUpdateHandler = { path in
+            print(path.status)
+        }
+        
+        let queue = DispatchQueue.global(qos: .background)
+        monitor.start(queue: queue)
     }
 }
