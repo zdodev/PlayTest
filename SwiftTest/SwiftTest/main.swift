@@ -1,9 +1,14 @@
 import Foundation
 
-let date = Date()
-let s = date.description
+struct Solution {
+    func solution(_ number: Int) -> Int {
+        number + 1
+    }
+}
 
-let dateFormatter = DateFormatter()
-let date1 = dateFormatter.date(from: s)
-let date2 = dateFormatter.string(from: date)
-
+struct TestCase {
+    let testCase = [
+        (1, 2),
+        (2, 3)
+    ]
+}

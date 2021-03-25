@@ -2,6 +2,49 @@
 
 ---
 
+### TestCase를 작성하면서 알고리즘 문제 해결하기
+
+TestCase를 작성하면서 알고리즘을 풀 수 있는 방식입니다. 입력을 테스트할 수 있으며, 입력이 주어지지 않은 경우에도 쉽게 테스트할 수 있습니다. 특히 예외, 반례 상황을 찾기에도 좋은 방식입니다.
+
+```swift
+// main.swift
+import Foundation
+
+struct Solution {
+    func solution(_ number: Int) -> Int {
+        number + 1
+    }
+}
+
+struct TestCase {
+    let testCase = [
+        (1, 2),
+        (2, 3)
+    ]
+}
+```
+
+각 테스트를 수행할 때 `map` 을 사용하였습니다. 테스트는 하나의 메소드에서 하나의 테스트만 수행하는 것이 원칙이지만 알고리즘 문제에 한해서 map을 사용해보는 것도 좋다고 생각했습니다.
+
+```swift
+// Tests.swift
+import XCTest
+
+class Tests: XCTestCase {
+    let solution = Solution()
+    let testCase = TestCase()
+    
+    func testQuotient() {
+        _ = testCase.testCase.map { (input, output) in
+            let result = solution.solution(input)
+            XCTAssertEqual(output, result)
+        }
+    }
+}
+```
+
+
+
 ### 클로저 중간에 종료하기
 
 클로저 실행 중간에 특정 조건을 만족하면 종료하도록 하고 싶었는데 `return` 문으로는 종료가 되지 않는다.
