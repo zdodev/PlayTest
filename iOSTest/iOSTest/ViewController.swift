@@ -2,17 +2,27 @@ import UIKit
 import Network
 
 final class ViewController: UIViewController {
-    @IBOutlet weak var btn: UIButton!
-    let monitor = NWPathMonitor()
+    
+    private let greenView = UIView()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
+        greenView.translatesAutoresizingMaskIntoConstraints = false
+        greenView.backgroundColor = .green
+        view.addSubview(greenView)
+        let margins = view.layoutMarginsGuide
+        NSLayoutConstraint.activate([
+            greenView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+            greenView.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+        ])
         
-        monitor.pathUpdateHandler = { path in
-            print(path.status)
-        }
-        
-        let queue = DispatchQueue.global(qos: .background)
-        monitor.start(queue: queue)
+        let guide = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            greenView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 30),
+            guide.bottomAnchor.constraint(equalToSystemSpacingBelow: greenView.bottomAnchor, multiplier: 1.0)
+        ])
     }
 }

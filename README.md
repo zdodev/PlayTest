@@ -2,6 +2,20 @@
 
 ---
 
+### Navigation bar의 높이를 알 수 있을까? (feat. safeAreaLayoutGuide)
+
+Navigation bar가 있는 뷰에 UI를 구성할 때 y축 위치를 view.y로 설정하면 navigation bar를 무시하고 화면 최상단에서부터 뷰를 배치하는 것을 볼 수 있습니다. 이러한 문제를 해결하기 위해서 `safeAreaLayoutGuide` 를 기준으로 제약을 설정하면 navigation bar 하단을 기준으로 레이아웃을 배치할 수 있습니다.
+
+```swift
+let guide = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            greenView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 30),
+            guide.bottomAnchor.constraint(equalToSystemSpacingBelow: greenView.bottomAnchor, multiplier: 1.0)
+        ])
+```
+
+
+
 ### TestCase를 작성하면서 알고리즘 문제 해결하기
 
 TestCase를 작성하면서 알고리즘을 풀 수 있는 방식입니다. 입력을 테스트할 수 있으며, 입력이 주어지지 않은 경우에도 쉽게 테스트할 수 있습니다. 특히 예외, 반례 상황을 찾기에도 좋은 방식입니다.
