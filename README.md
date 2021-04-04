@@ -2,6 +2,38 @@
 
 ---
 
+### Guard 문 조건문 판별
+
+Guard 문은 조건문이 참일 때 계속 실행하고, 조건문이 거짓이면 else 구문을 실행하고 함수를 종료한다.
+
+```swift
+let name = "zdo"
+
+func iDontKnowGuardStatement() {
+    // 조건문이 true면 계속 실행.
+    guard name == "zdo" else {
+        return
+    }
+    
+    print("guard")
+}
+
+func iReallyDontKnowGuardStatement() {
+    // 조건문이 false이므로 조기 종료.
+    guard name != "zdo" else {
+        return
+    }
+    
+    print("가드")
+}
+
+iDontKnowGuardStatement()
+iReallyDontKnowGuardStatement()
+// guard
+```
+
+
+
 ### Navigation bar의 높이를 알 수 있을까? (feat. safeAreaLayoutGuide)
 
 Navigation bar가 있는 뷰에 UI를 구성할 때 y축 위치를 view.y로 설정하면 navigation bar를 무시하고 화면 최상단에서부터 뷰를 배치하는 것을 볼 수 있습니다. 이러한 문제를 해결하기 위해서 `safeAreaLayoutGuide` 를 기준으로 제약을 설정하면 navigation bar 하단을 기준으로 레이아웃을 배치할 수 있습니다.
