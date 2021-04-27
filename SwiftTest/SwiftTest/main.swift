@@ -1,22 +1,14 @@
-let name = "zdo"
+// Swift에서 부동소수점 소수점 자릿수 출력 조작하기
 
-func iDontKnowGuardStatement() {
-    // 조건문이 true면 계속 실행.
-    guard name == "zdo" else {
-        return
-    }
-    
-    print("guard")
-}
+// String Formats를 사용하려면 Foundation을 가져와야 한다.
+import Foundation
 
-func iReallyDontKnowGuardStatement() {
-    // 조건문이 false이므로 조기 종료.
-    guard name != "zdo" else {
-        return
-    }
-    
-    print("가드")
-}
+// 소수점 한 자릿수까지 표현하기
+let dotOne = String(format: "%.1f", 0.123)
+print("dotOne = \(dotOne)")
+// dotOne = 0.1
 
-iDontKnowGuardStatement()
-iReallyDontKnowGuardStatement()
+// 소수점 두 자릿수까지 표현하기
+let dotTwo = String(format: "%.2f", 0.123)
+print("dotOne = \(dotTwo)")
+// dotOne = 0.12

@@ -2,9 +2,33 @@
 
 ---
 
+### 부동소수점 소수점 자리 조작하기
+
+Swift에서 부동소수점 소수점 자릿수를 조작하려면 String 타입의 `init(format: String, CVarArg...) 이니셜라이저`를 사용하면 된다.
+
+```swift
+// Swift에서 부동소수점 소수점 자릿수 출력 조작하기
+
+// String Formats를 사용하려면 Foundation을 가져와야 한다.
+import Foundation
+
+// 소수점 한 자릿수까지 표현하기
+let dotOne = String(format: "%.1f", 0.123)
+print("dotOne = \(dotOne)")
+// dotOne = 0.1
+
+// 소수점 두 자릿수까지 표현하기
+let dotTwo = String(format: "%.2f", 0.123)
+print("dotOne = \(dotTwo)")
+// dotOne = 0.12
+
+```
+
+
+
 ### Guard 문 조건문 판별
 
-Guard 문은 조건문이 참일 때 계속 실행하고, 조건문이 거짓이면 else 구문을 실행하고 함수를 종료한다.
+`Guard 문`은 조건문이 **참일 때 계속 실행**하고, 조건문이 거짓이면 else 구문을 실행하고 함수를 종료한다.
 
 ```swift
 let name = "zdo"
