@@ -1,28 +1,51 @@
 import UIKit
-import Network
 
 final class ViewController: UIViewController {
-    
-    private let greenView = UIView()
+    @IBOutlet private var tableView: UITableView!
+    private var data = [
+        Person(firstName: "Dan", lastName: "a", gender: "male", age: 25, height: 144),
+        Person(firstName: "Betty", lastName: "r", gender: "famale", age: 35, height: 144),
+        Person(firstName: "John", lastName: "z", gender: "male", age: 35, height: 144),
+    ]
     
     override func viewDidLoad() {
-        setupView()
+        super.viewDidLoad()
+        
+        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.cellIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        data.count
     }
     
-    private func setupView() {
-        greenView.translatesAutoresizingMaskIntoConstraints = false
-        greenView.backgroundColor = .green
-        view.addSubview(greenView)
-        let margins = view.layoutMarginsGuide
-        NSLayoutConstraint.activate([
-            greenView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
-            greenView.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
-        ])
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.cellIdentifier, for: indexPath) as! CustomTableViewCell
         
-        let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            greenView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 30),
-            guide.bottomAnchor.constraint(equalToSystemSpacingBelow: greenView.bottomAnchor, multiplier: 1.0)
-        ])
+        let model = data[indexPath.row]
+        cell.configure(with: CellViewModel(firstName: model.firstName, lastName: model.lastName))
+        return cell
     }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+struct Person {
+    let firstName: String
+    let lastName: String
+    let gender: String
+    let age: Int
+    let height: Double
+}
+
+struct CellViewModel {
+    let firstName: String
+    let lastName: String
 }
