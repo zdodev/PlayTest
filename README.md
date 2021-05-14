@@ -2,9 +2,18 @@
 
 ---
 
-### MVVM 맛보기
+### 정수 타입의 UTC 시간을 현지 시간으로 변환하기 (UTC + 9 등)
 
-MVVM 예제를 따라해보았습니다.
+UTC + 0 인 시간을 지역 시간으로 표현하기 위해서 DateFormatter()를 사용해야 합니다. 로케일과 타임존에 맞춰서 출력합니다.
+
+```swift
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy-MM-dd HH:mm EEE"
+let date = Date(timeIntervalSince1970: 1620982800)
+print(dateFormatter.string(from: date))
+```
+
+
 
 ### 부동소수점 소수점 자리 조작하기
 
