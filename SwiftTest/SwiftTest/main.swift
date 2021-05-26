@@ -1,15 +1,25 @@
-let imperative = [1, 2, 3, 4, 5]
-var result = [Int]()
-
-for element in imperative {
-    let double = element * 2
-    result.append(double)
+struct High {
+    let highMount: Int
 }
-print(result)
 
-let declarative = [1, 2, 3, 4, 5]
-
-let result = declarative.map {
-    $0 * 2
+protocol MiddleComponent {
+    var middleMount: Int { get set }
 }
-print(result)
+
+struct FirstMiddle: MiddleComponent {
+    var middleMount: Int
+    var high: High
+}
+
+struct SecondMiddle: MiddleComponent {
+    var middleMount: Int
+    var high: High
+}
+
+struct Low {
+    let lowMount: Int
+    var middle: MiddleComponent
+}
+
+let low = Low(lowMount: 5, middle: FirstMiddle(middleMount: 5, high: High(highMount: 5)))
+print(low)
