@@ -1,10 +1,15 @@
-import Foundation
+let imperative = [1, 2, 3, 4, 5]
+var result = [Int]()
 
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd HH:mm EEE"
-let date = Date(timeIntervalSince1970: 1620982800)
-print(dateFormatter.string(from: date))
+for element in imperative {
+    let double = element * 2
+    result.append(double)
+}
+print(result)
 
+let declarative = [1, 2, 3, 4, 5]
 
-let date1 = Date(timeIntervalSince1970: 1620986400)
-print(dateFormatter.string(from: date1))
+let result = declarative.map {
+    $0 * 2
+}
+print(result)
