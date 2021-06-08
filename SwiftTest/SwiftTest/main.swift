@@ -1,10 +1,17 @@
-import Foundation
+struct AA {
+    var member = 3
+    
+    mutating func bb() {
+        member = 4
+    }
+}
 
-let url = URL(string: "https://note.heyo.me/wp-content/uploads/2017/02/stack_memory.png")!
-print(url.absoluteString)
-print(url.absoluteURL)
-print(url.baseURL)
-print(url.host)
-print(url.relativePath)
-print(url.relativeString)
-print(url.fragment)
+func test(_ a: inout AA) {
+    a.bb()
+}
+
+var b = AA()
+print(b.member)
+test(&b)
+print(b.member)
+

@@ -1,40 +1,23 @@
 import UIKit
 
+typealias AlertHandler = @convention(block) (UIAlertAction) -> Void
+
 final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var aaa = AAA(name: "aaa")
-        withUnsafePointer(to: aaa) {
-            print($0)
-        }
-        aaa.changeName("bbb")
-        withUnsafePointer(to: aaa) {
-            print($0)
-        }
-        aaa.changeName("ccc")
-        withUnsafePointer(to: aaa) {
-            print($0)
-        }
-        aaa.changeName("ddd")
-        withUnsafePointer(to: aaa) {
-            print($0)
-        }
-        aaa.changeName("eee")
-        withUnsafePointer(to: aaa) {
-            print($0)
-        }
-        aaa.changeName("fff")
-        withUnsafePointer(to: aaa) {
-            print($0)
-        }
     }
-}
-
-struct AAA {
-    var name: String
     
-    mutating func changeName(_ name: String) {
-        self.name = name
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let action = UIAlertAction(title: "ee", style: .default) { _ in
+            print("alert!")
+        }
+        
+        let actionHandler = action.value(forKey: "handler")!
+        let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(actionHandler as AnyObject).toOpaque())
+        let handler = unsafeBitCast(blockPtr, to: AlertHandler.self)
+        handler(action)
     }
 }
