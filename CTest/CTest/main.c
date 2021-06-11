@@ -3,20 +3,19 @@
 #include <unistd.h>
 #include "InfixToPostfix.h"
 
-int main(int argc, const char *argv[]) {
-    int pid = 0;
-    
-    pid = fork();
-    
-    if (pid < 0) {
-        fprintf(stderr, "Fork Failed");
-        exit(1);
-    } else if (pid == 0) {
-        execlp("/bin/ls", "-l");
-    } else {
-        wait(NULL);
-        printf("Child Complete");
+int mod(char *S, int p) {
+    // S는 수를 문자열로 표현한 것, 1324 -> "1324"
+    int ret = 0;
+    for (int i=0;S[i];i++) {
+//        printf("%d %d\n", i, S[i]);
+        ret = (ret*10 + (S[i]-'0')) % p;
+        printf("%d\n", ret);
     }
+    return ret;
+}
+
+int main(int argc, const char *argv[]) {
+    mod("1324", 5);
     
     return 0;
 }

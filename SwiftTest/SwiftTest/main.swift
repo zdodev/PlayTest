@@ -1,17 +1,17 @@
-struct AA {
-    var member = 3
-    
-    mutating func bb() {
-        member = 4
+func factorial(_ number: Int) -> Int {
+    if number == 1 {
+        return 1
     }
+    return number * factorial(number - 1)
 }
 
-func test(_ a: inout AA) {
-    a.bb()
+print(factorial(5))
+
+func tailFactorial(_ number: Int, fac: Int) -> Int {
+    if number == 1 {
+        return fac
+    }
+    return tailFactorial(number - 1, fac: number * fac)
 }
 
-var b = AA()
-print(b.member)
-test(&b)
-print(b.member)
-
+print(tailFactorial(5, fac: 1))
