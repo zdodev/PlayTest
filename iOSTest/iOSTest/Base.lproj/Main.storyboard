@@ -15,6 +15,16 @@
                     <view key="view" contentMode="scaleToFill" id="RCC-xO-fpq">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1i-5X-7yc">
+                                <rect key="frame" x="153" y="379" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressButton:" destination="Nbb-4l-FAf" eventType="touchUpInside" id="n2f-oi-LPb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ehA-jc-Ozy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>

@@ -1,23 +1,18 @@
 import UIKit
-
-typealias AlertHandler = @convention(block) (UIAlertAction) -> Void
+import AVFoundation
 
 final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let action = UIAlertAction(title: "ee", style: .default) { _ in
-            print("alert!")
-        }
-        
-        let actionHandler = action.value(forKey: "handler")!
-        let blockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(actionHandler as AnyObject).toOpaque())
-        let handler = unsafeBitCast(blockPtr, to: AlertHandler.self)
-        handler(action)
+    @IBAction func pressButton(_ sender: UIButton) {
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: "스위프트")
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
     }
 }

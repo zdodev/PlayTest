@@ -1,17 +1,34 @@
-func factorial(_ number: Int) -> Int {
-    if number == 1 {
-        return 1
-    }
-    return number * factorial(number - 1)
+protocol Coffee {
+    var taste: String { get }
 }
 
-print(factorial(5))
-
-func tailFactorial(_ number: Int, fac: Int) -> Int {
-    if number == 1 {
-        return fac
-    }
-    return tailFactorial(number - 1, fac: number * fac)
+struct Americano: Coffee {
+    let taste = "americano"
 }
 
-print(tailFactorial(5, fac: 1))
+struct Latte: Coffee {
+    let taste = "latte"
+}
+
+struct VendingMachine {
+    func makeCoffee(coffee: Coffee) -> String {
+        coffee.taste
+    }
+}
+
+struct Button {
+    let vendingMachine = VendingMachine() 
+    
+    func pressAmericanoButton() -> String {
+        vendingMachine.makeCoffee(coffee: Americano())
+//        let coffee = vendingMachine.makeCoffee(coffee: <#T##Coffee#>)
+    }
+    
+    func pressLatteButton() -> String {
+        vendingMachine.makeCoffee(coffee: Latte())
+    }
+}
+
+var button = Button()
+let coffee = button.pressAmericanoButton()
+print(coffee)
