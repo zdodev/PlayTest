@@ -1,7 +1,7 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var myView: UIView!
     var page = 0
     
     override func viewDidLoad() {
@@ -9,12 +9,8 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func pressButton(_ sender: UIButton) {
-        page += 1
-        
-        if page == 3 {
-            page = 0
-        }
-        
-        pageControl.currentPage = page
+//        print(view.constraints.first!)
+        let const = view.constraints[1]
+        const.constant += 10
     }
 }
