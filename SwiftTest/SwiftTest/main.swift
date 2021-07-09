@@ -1,34 +1,13 @@
-protocol Coffee {
-    var taste: String { get }
-}
+import Foundation
 
-struct Americano: Coffee {
-    let taste = "americano"
-}
+let dateInterval = DateInterval(start: Date(), duration: 100)
+print(dateInterval)
 
-struct Latte: Coffee {
-    let taste = "latte"
-}
+// +20 seconds
+let date = Date().addingTimeInterval(20)
+print(date)
 
-struct VendingMachine {
-    func makeCoffee(coffee: Coffee) -> String {
-        coffee.taste
-    }
-}
+let tomorrow = Date().addingTimeInterval(60 * 60 * 24)
+print(tomorrow)
 
-struct Button {
-    let vendingMachine = VendingMachine() 
-    
-    func pressAmericanoButton() -> String {
-        vendingMachine.makeCoffee(coffee: Americano())
-//        let coffee = vendingMachine.makeCoffee(coffee: <#T##Coffee#>)
-    }
-    
-    func pressLatteButton() -> String {
-        vendingMachine.makeCoffee(coffee: Latte())
-    }
-}
-
-var button = Button()
-let coffee = button.pressAmericanoButton()
-print(coffee)
+ 
