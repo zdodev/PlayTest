@@ -1,13 +1,31 @@
 import Foundation
 
-let dateInterval = DateInterval(start: Date(), duration: 100)
-print(dateInterval)
+class MyList {
+    var coffeeList = [Int]()
+}
 
-// +20 seconds
-let date = Date().addingTimeInterval(20)
-print(date)
+class A1 {
+    let myList = MyList()
+    
+    func insert() {
+        myList.coffeeList.append(1)
+        myList.coffeeList.append(2)
+        myList.coffeeList.append(3)
+    }
+}
 
-let tomorrow = Date().addingTimeInterval(60 * 60 * 24)
-print(tomorrow)
+let a = A1()
+a.insert()
+print(a.myList.coffeeList)
 
- 
+class B1 {
+    func update(_ list: MyList) {
+        list.coffeeList.append(4)
+        list.coffeeList.append(5)
+        list.coffeeList = []
+    }
+}
+
+let b = B1()
+b.update(a.myList)
+print(a.myList.coffeeList)
