@@ -1,31 +1,13 @@
 import Foundation
 
-class MyList {
-    var coffeeList = [Int]()
-}
+let str = "2021-07-26 12:06:06"
 
-class A1 {
-    let myList = MyList()
-    
-    func insert() {
-        myList.coffeeList.append(1)
-        myList.coffeeList.append(2)
-        myList.coffeeList.append(3)
-    }
-}
+let dateFormmatter = DateFormatter()
+dateFormmatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+let date = dateFormmatter.date(from: str)!
 
-let a = A1()
-a.insert()
-print(a.myList.coffeeList)
+dateFormmatter.dateFormat = "yyyy-MM-dd"
+let date1 = dateFormmatter.string(from: date)
 
-class B1 {
-    func update(_ list: MyList) {
-        list.coffeeList.append(4)
-        list.coffeeList.append(5)
-        list.coffeeList = []
-    }
-}
-
-let b = B1()
-b.update(a.myList)
-print(a.myList.coffeeList)
+print(date)
+print(date1)
