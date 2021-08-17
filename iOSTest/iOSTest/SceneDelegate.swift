@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  iOSTest
-//
-//  Created by Zero DotOne on 2021/02/12.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -47,6 +40,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        print("scene(_:openURLContexts:)")
+    }
 }
 
